@@ -1,0 +1,100 @@
+$mainfont: "Montserrat", sans-serif;
+$maincolor: #24A3FF;
+$activecolor: #F0145A;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url(./reset.css);
+
+@mixin max-screen($res){
+    @media screen and (max-width: $res){
+       @content 
+    }
+}
+body{
+    font-family: $mainfont;
+    font-weight: 400;
+    font-size: 16px;
+}
+.header-desktop{
+    padding: 40px 60px;
+    border-radius: 0 0 12px 12px;
+    background: var(--Gradient-Supersoft, linear-gradient(229deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .burger{
+    display: none;
+    }
+    .header-contact{
+        display: flex;
+        flex-direction: column;
+        gap: 18.5px;
+    }
+    .contact-info{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 6px;
+    }
+    .lang ul{
+        display: flex;
+            li{
+            color: #FFF;
+            text-align: center;
+            border-radius: 8px;
+            background: transparent;
+            padding: 5px 7px;
+            }
+            li:hover{
+            background: rgba(255, 255, 255, 0.20);
+            }
+            a{
+                font-family: $mainfont;
+                font-size: 12px;
+                font-weight: 700;   
+            }
+            
+    }
+    .contact{
+        color: #FFF;
+        font-weight: 400;
+            ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 6px;
+        }
+            .phone{
+            font-weight: 700;
+        }
+         .facebookLogo:hover path{
+        fill: $activecolor;
+        }
+    }   
+    .desctop-nav ul{
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+            a{
+        color: #FFF;
+        font-weight: 700;
+        } 
+        li::after{
+            display: block;
+            content: "";
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: 0.4s;
+            
+        }
+        li:hover::after{
+            width: 100%;
+        }
+        
+    }
+    
+   
+}
