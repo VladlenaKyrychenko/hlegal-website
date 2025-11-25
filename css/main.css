@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
 @import url(./reset.css);
@@ -9,7 +10,6 @@ body {
 
 .container-top {
   color: white;
-  padding: 40px 60px;
   border-radius: 0 0 12px 12px;
   background: var(--Gradient-Supersoft, linear-gradient(229deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%));
 }
@@ -19,9 +19,18 @@ body {
 }
 
 .header-desktop {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  top: 32px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+.header-desktop nav a.active {
+  background: #F0145A;
 }
 .header-desktop .burger {
   display: none;
@@ -93,17 +102,31 @@ body {
 }
 
 .header-banner {
+  position: relative;
+  display: flex;
+  justify-content: center;
   align-items: center;
   margin-bottom: 60px;
+  background-image: url(../img/Symbol.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
-.header-banner button {
-  background: transparent;
-  transition: 0.4s;
+.header-banner p {
+  color: var(--Basic-White, #FFF);
+  text-align: center;
+  font-size: 38px;
+  font-weight: 700;
 }
-.header-banner button:hover circle {
+.header-banner svg {
+  position: absolute;
+  bottom: 30px;
+}
+.header-banner svg:hover circle {
   stroke: #F0145A;
 }
-.header-banner button:hover svg path {
+.header-banner svg:hover path {
   stroke: #F0145A;
 }
 
@@ -178,98 +201,104 @@ body {
   stroke: #F0145A;
 }
 
+/* MOBILE FIRST */
 .services h2 {
-  font-size: 38px;
+  font-size: 32px;
   font-weight: 700;
   background: var(--Gradient-Red-Text, linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%));
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 .services-item {
   display: flex;
-  flex-wrap: wrap;
-  gap: 60px;
+  flex-direction: column;
+  gap: 40px;
 }
 .services-item .item1, .services-item .item2, .services-item .item3, .services-item .item4, .services-item .item5, .services-item .item6 {
   display: flex;
   flex-direction: column;
   align-items: start;
-  max-width: 493px;
 }
 .services-item .item1 h4, .services-item .item2 h4, .services-item .item3 h4, .services-item .item4 h4, .services-item .item5 h4, .services-item .item6 h4 {
   color: #24A3FF;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 .services-item .item1 p, .services-item .item2 p, .services-item .item3 p, .services-item .item4 p, .services-item .item5 p, .services-item .item6 p {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 26px;
+  font-size: 14px;
+  line-height: 22px;
+}
+.services-item .item1::before, .services-item .item2::before, .services-item .item3::before, .services-item .item4::before, .services-item .item5::before, .services-item .item6::before {
+  content: "";
+  width: 72px;
+  height: 72px;
+  margin-bottom: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .services-item .item1::before {
-  display: inline-block;
-  content: "";
   background-image: url(../img/homepage/Icon1.svg);
-  background-repeat: no-repeat;
-  position: relative;
-  width: 92px;
-  height: 92px;
-  margin-bottom: 30px;
 }
 .services-item .item2::before {
-  display: inline-block;
-  content: "";
   background-image: url(../img/homepage/Icon2.svg);
-  background-repeat: no-repeat;
-  position: relative;
-  width: 92px;
-  height: 92px;
-  margin-bottom: 30px;
 }
 .services-item .item3::before {
-  display: inline-block;
-  content: "";
   background-image: url(../img/homepage/Icon3.svg);
-  background-repeat: no-repeat;
-  position: relative;
-  width: 92px;
-  height: 92px;
-  margin-bottom: 30px;
 }
 .services-item .item4::before {
-  display: inline-block;
-  content: "";
   background-image: url(../img/homepage/Icon4.svg);
-  background-repeat: no-repeat;
-  position: relative;
-  width: 92px;
-  height: 92px;
-  margin-bottom: 30px;
 }
 .services-item .item5::before {
-  display: inline-block;
-  content: "";
   background-image: url(../img/homepage/Icon5.svg);
-  background-repeat: no-repeat;
-  position: relative;
-  width: 92px;
-  height: 92px;
-  margin-bottom: 30px;
 }
 .services-item .item6::before {
-  display: inline-block;
-  content: "";
   background-image: url(../img/homepage/Icon6.svg);
-  background-repeat: no-repeat;
-  position: relative;
-  width: 92px;
-  height: 92px;
-  margin-bottom: 30px;
 }
 
+/* TABLET (≥768px) */
+@media screen and (min-width: 768px) {
+  .services h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+  }
+  .services-item {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .services-item .item1, .services-item .item2, .services-item .item3, .services-item .item4, .services-item .item5, .services-item .item6 {
+    max-width: calc(50% - 20px);
+  }
+}
+/* DESKTOP (≥1200px) */
+@media screen and (min-width: 1200px) {
+  .services h2 {
+    font-size: 38px;
+    margin-bottom: 60px;
+  }
+  .services-item {
+    gap: 60px;
+  }
+  .services-item .item1, .services-item .item2, .services-item .item3, .services-item .item4, .services-item .item5, .services-item .item6 {
+    max-width: 493px;
+  }
+  .services-item .item1 h4, .services-item .item2 h4, .services-item .item3 h4, .services-item .item4 h4, .services-item .item5 h4, .services-item .item6 h4 {
+    font-size: 22px;
+  }
+  .services-item .item1 p, .services-item .item2 p, .services-item .item3 p, .services-item .item4 p, .services-item .item5 p, .services-item .item6 p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .services-item .item1::before, .services-item .item2::before, .services-item .item3::before, .services-item .item4::before, .services-item .item5::before, .services-item .item6::before {
+    width: 92px;
+    height: 92px;
+    margin-bottom: 30px;
+  }
+}
 .carousel .carousel-post {
   display: flex;
   border-radius: 12px;

@@ -1,0 +1,29 @@
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1440px;
+
+@mixin up($bp) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}
+@mixin min-screen($res){
+  @media screen and (min-width: $res){
+    @content;
+  }
+}
+// MOBILE FIRST
+@mixin up($size) {
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+// DESKTOP FIRST
+@mixin down($size) {
+  @media (max-width: $size) {
+    @content;
+  }
+}
