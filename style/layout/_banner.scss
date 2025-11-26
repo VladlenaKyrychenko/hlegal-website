@@ -1,0 +1,39 @@
+.header-banner {
+  min-height: 100vh;
+  background-image: url(../img/Symbol.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 40px;
+
+  p {
+    color: #fff;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  svg {
+    position: absolute;
+    bottom: 20px;
+
+    &:hover circle,
+    &:hover path {
+      stroke: $activecolor;
+    }
+  }
+
+  // Desktop
+  @include min-screen(1200px) {
+    margin-bottom: 60px;
+
+    p {
+      font-size: 38px;
+    }
+  }
+}

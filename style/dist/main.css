@@ -1,22 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+@import "base/variables";
+@import "base/mixins";
+@import "base/global";
+
+@import "layout/header";
+@import "layout/banner";
+@import "layout/footer";
+
+@import "components/experience";
+@import "components/services";
+@import "components/carousel";
+@import "components/sponsors";
+@import "components/publications";
+
+@import "pages/home";
+
 @import url(./reset.css);
-body {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-}
 
-.container-top {
-  color: white;
-  padding: 40px 60px;
-  border-radius: 0 0 12px 12px;
-  background: var(--Gradient-Supersoft, linear-gradient(229deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%));
-}
-
-.container {
-  padding: 40px 60px;
-}
 
 .header-desktop {
   display: flex;
