@@ -15,7 +15,7 @@ body {
 }
 
 .container {
-  padding: 40px 60px;
+  padding: 0 30px;
 }
 
 .header-banner {
@@ -33,7 +33,7 @@ body {
 .header-banner p {
   color: #fff;
   text-align: center;
-  font-size: 28px;
+  font-size: 38px;
   font-weight: 700;
 }
 .header-banner svg {
@@ -47,74 +47,110 @@ body {
   .header-banner {
     margin-bottom: 60px;
   }
-  .header-banner p {
-    font-size: 38px;
-  }
 }
 
-.footer {
-  background: var(--gray-900);
-  color: #fff;
-  padding: 48px 0;
+.line-bottom {
+  height: 2px;
+  align-self: stretch;
+  background: var(--Grey-Separator, #E6E6F0);
+  margin-bottom: 30px;
 }
-.footer__top {
-  text-align: center;
-  margin-bottom: 32px;
+
+footer {
+  background: var(--Grey-Bg, #F5F5FA);
 }
-.footer__top-title {
-  font-size: 22px;
-  font-weight: 700;
-}
-.footer__links {
+footer .footer-desctop {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
 }
-.footer__links a {
-  color: var(--gray-300);
-  font-size: 14px;
-  transition: 0.3s;
+footer .footer-desctop .contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 21px;
 }
-.footer__links a:hover {
-  color: #fff;
+footer .footer-desctop .contact .contactMap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
 }
-.footer__bottom {
-  margin-top: 32px;
-  text-align: center;
+footer .footer-desctop .contact .contactMap svg {
+  display: none;
+}
+footer .footer-desctop .contact .contactMap p {
+  color: var(--Main-Regular, #323264);
+  font-size: 16px;
+  font-weight: 400;
+}
+footer .footer-desctop .contact .contactMap span a {
+  color: #24A3FF;
   font-size: 12px;
-  color: var(--gray-500);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
-@media screen and (min-width: 768px) {
-  .footer {
-    padding: 64px 0;
-  }
-  .footer .footer__links {
-    flex-direction: row;
-    justify-content: center;
-    gap: 32px;
-  }
+footer .footer-desctop .contact .contactOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
 }
-@media (min-width: 1024px) {
-  .footer {
-    padding: 80px 0;
-  }
+footer .footer-desctop .contact .contactOptions .dot {
+  display: none;
+}
+footer .footer-desctop .contact .contactOptions span a {
+  color: var(--Main-Alt, #46466E);
+  text-align: right;
+  font-size: 16px;
+  font-weight: 700;
+}
+footer .footer-desctop .contact .contactOptions a {
+  color: #24A3FF;
+  font-size: 16px;
+  font-weight: 700;
+}
+footer .footer-desctop .contactText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .footer-desctop .contactText p {
+  color: var(--Grey-Text, #B3B3BA);
+  text-align: right;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .experience {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 30px;
+  padding: 0 30px;
   margin-bottom: 40px;
 }
 .experience .experience-list nav ul {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  overflow: auto;
   gap: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+.experience .experience-list nav ul::-webkit-scrollbar {
+  display: none;
 }
 .experience .experience-list nav ul li {
-  text-align: left;
-  font-size: 26px;
+  flex: 0 0 auto;
+  font-size: 30px;
+  font-weight: 700;
+  background: var(--Gradient-Text-Red-Reversed, linear-gradient(90deg, #EF8080 0.84%, #F0145A 99.96%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .experience .experience-list nav ul li a {
   color: #b3b3ba;
@@ -123,37 +159,59 @@ body {
   color: #F0145A;
 }
 .experience .line-vert {
-  display: none;
+  height: 4px;
+  width: 90%;
+  background: rgba(255, 255, 255, 0.3);
 }
 .experience .description {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
 }
 .experience .description h3 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
 }
 .experience .description p {
-  font-size: 16px;
+  font-size: 19px;
+  width: 100%;
 }
 @media screen and (min-width: 1200px) {
   .experience {
+    display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     gap: 60px;
+  }
+  .experience .experience-list nav ul {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    font-size: 38px;
   }
   .experience .experience-list nav ul li {
     text-align: right;
     font-size: 38px;
+    font-weight: 700;
+    transition: 0.4s;
+  }
+  .experience .experience-list nav ul li a {
+    color: #B3B3BA;
+  }
+  .experience .experience-list nav ul li:hover a {
+    color: #F0145A;
   }
   .experience .line-vert {
-    display: block;
+    display: flex;
     width: 4px;
-    height: 300px;
+    height: 200px;
     background: rgba(255, 255, 255, 0.3);
   }
   .experience .description {
+    align-items: flex-start;
     max-width: 580px;
   }
   .experience .description h3 {
@@ -161,10 +219,14 @@ body {
   }
   .experience .description p {
     font-size: 19px;
+    width: 100%;
   }
 }
 
 .services {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
   /* TABLET */
   /* DESKTOP */
 }
@@ -258,9 +320,6 @@ body {
   }
 }
 
-.sponsors {
-  padding: 45px 0;
-}
 .sponsors p {
   text-align: center;
   font-size: 14px;
@@ -299,9 +358,13 @@ body {
 }
 
 .publications {
-  padding: 60px 0;
   background: var(--Grey-Bg, #F5F5FA);
-
+  padding: 30px 30px;
+  /* Title */
+  /* POSTS WRAPPER */
+  /* SINGLE POST CARD */
+  /* TABLET ≥768px */
+  /* DESKTOP ≥1200px */
 }
 .publications h2 {
   font-size: 28px;
@@ -371,7 +434,7 @@ body {
     width: calc(50% - 15px);
   }
 }
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
   .publications h2 {
     font-size: 38px;
     margin-bottom: 60px;
@@ -401,9 +464,6 @@ body {
 .header-desktop nav a.active {
   background: #F0145A;
 }
-.header-desktop .burger {
-  display: none;
-}
 .header-desktop .header-contact {
   display: flex;
   flex-direction: column;
@@ -424,6 +484,9 @@ body {
   border-radius: 8px;
   background: transparent;
   padding: 5px 7px;
+}
+.header-desktop .lang ul li a .active {
+  background: #F0145A;
 }
 .header-desktop .lang ul li:hover {
   background: rgba(255, 255, 255, 0.2);

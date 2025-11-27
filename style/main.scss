@@ -32,9 +32,7 @@
     nav a.active{
         background: $activecolor;
     }
-    .burger{
-    display: none;
-    }
+    
     .header-contact{
         display: flex;
         flex-direction: column;
@@ -54,7 +52,12 @@
             border-radius: 8px;
             background: transparent;
             padding: 5px 7px;
+            
+            a .active{
+            background: $activecolor;
             }
+            }
+             
             li:hover{
             background: rgba(255, 255, 255, 0.20);
             }

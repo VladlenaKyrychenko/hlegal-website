@@ -1,65 +1,102 @@
 .experience {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 30px;
+  padding: 0 30px;
   margin-bottom: 40px;
 
   .experience-list nav ul {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    overflow: auto;
     gap: 20px;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+    display: none;
+  }
 
     li {
-      text-align: left;
-      font-size: 26px;
+        flex: 0 0 auto;
+      font-size: 30px;
+      font-weight: 700;
+      background: var(--Gradient-Text-Red-Reversed, linear-gradient(90deg, #EF8080 0.84%, #F0145A 99.96%));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       a { color: #b3b3ba; }
     }
 
     li:hover a { color: $activecolor; }
   }
-
   .line-vert {
-    display: none;
-  }
+      height: 4px;
+      width: 90%;
+      background: rgba(255,255,255,0.3);
+    }
+
 
   .description {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
 
     h3 {
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 700;
     }
 
     p {
-      font-size: 16px;
+      font-size: 19px;
+      width: 100%;
     }
   }
 
   // Desktop
   @include min-screen(1200px) {
+    display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     gap: 60px;
 
-    .experience-list nav ul li {
-      text-align: right;
-      font-size: 38px;
+    .experience-list nav ul {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        font-size: 38px;
+        li{ text-align: right;
+             font-size: 38px; 
+             font-weight: 700; 
+             transition: 0.4s; 
+            a{ 
+                color: #B3B3BA;
+             }
     }
+    li:hover a{ 
+        color: $activecolor;
+     }
+}
 
     .line-vert {
-      display: block;
+      display: flex;
       width: 4px;
-      height: 300px;
+      height: 200px;
       background: rgba(255,255,255,0.3);
     }
 
     .description {
+        align-items: flex-start;
       max-width: 580px;
 
       h3 { font-size: 30px; }
-      p { font-size: 19px; }
+      p {
+         font-size: 19px; 
+        width: 100%;
+}
     }
   }
 }

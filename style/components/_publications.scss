@@ -1,6 +1,6 @@
 .publications {
-  padding: 60px 0;
   background: var(--Grey-Bg, #F5F5FA);
+  padding: 30px 30px;
 
   /* Title */
   h2 {
@@ -86,7 +86,7 @@
   }
 
   /* DESKTOP ≥1200px */
-  @media (min-width: 1200px) {
+   @include min-screen(1200px) {
     h2 {
       font-size: 38px;
       margin-bottom: 60px;
