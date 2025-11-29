@@ -5,6 +5,7 @@
          margin-bottom: 30px; 
         } 
 footer{
+    padding: 30px 30px;
      background: var(--Grey-Bg, #F5F5FA); 
      
      
@@ -78,4 +79,34 @@ footer{
                                  } 
                                 } 
                             } 
+                            @include min-screen(1200px) {
+                                .footer-desctop{
+                                    flex-direction: row; 
+                                    
+                                    .contact{
+                                    
+                                    gap: 21px;
+                                    .contactMap{
+                                        display: flex;
+                                        flex-direction: row;
+                                        gap: 10px;
+                                        align-items: center;
+                                        svg{
+                                            display: block;
+                                        }
+                                    }
+                                    .contactOptions{
+                                        flex-direction: row;
+                                        .dot{
+                                            display: block;
+                                        }
+                                    }
+                                    .contactText{
+                                        justify-content: flex-end;
+                                         align-items: flex-start;
+                                    }
+                                }
+                                }
+                               
+                            }
                         }

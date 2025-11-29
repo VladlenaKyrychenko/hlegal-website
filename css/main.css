@@ -48,82 +48,6 @@ body {
   }
 }
 
-.line-bottom {
-  height: 2px;
-  align-self: stretch;
-  background: var(--Grey-Separator, #E6E6F0);
-  margin-bottom: 30px;
-}
-
-footer {
-  background: var(--Grey-Bg, #F5F5FA);
-}
-footer .footer-desctop {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
-}
-footer .footer-desctop .contact {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 21px;
-}
-footer .footer-desctop .contact .contactMap {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-}
-footer .footer-desctop .contact .contactMap svg {
-  display: none;
-}
-footer .footer-desctop .contact .contactMap p {
-  color: var(--Main-Regular, #323264);
-  font-size: 16px;
-  font-weight: 400;
-}
-footer .footer-desctop .contact .contactMap span a {
-  color: #24A3FF;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-footer .footer-desctop .contact .contactOptions {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-}
-footer .footer-desctop .contact .contactOptions .dot {
-  display: none;
-}
-footer .footer-desctop .contact .contactOptions span a {
-  color: var(--Main-Alt, #46466E);
-  text-align: right;
-  font-size: 16px;
-  font-weight: 700;
-}
-footer .footer-desctop .contact .contactOptions a {
-  color: #24A3FF;
-  font-size: 16px;
-  font-weight: 700;
-}
-footer .footer-desctop .contactText {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-footer .footer-desctop .contactText p {
-  color: var(--Grey-Text, #B3B3BA);
-  text-align: right;
-  font-size: 16px;
-  font-weight: 400;
-}
-
 .header-desktop {
   width: 100%;
   position: absolute;
@@ -615,18 +539,23 @@ footer .footer-desctop .contactText p {
   }
 }
 
-footer {
-  background: var(--Grey-Bg, #F5F5FA);
-}
-footer .line-bottom {
+.line-bottom {
   height: 2px;
   align-self: stretch;
   background: var(--Grey-Separator, #E6E6F0);
   margin-bottom: 30px;
 }
+
+footer {
+  padding: 30px 30px;
+  background: var(--Grey-Bg, #F5F5FA);
+}
 footer .footer-desctop {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  gap: 30px;
 }
 footer .footer-desctop .contact {
   display: flex;
@@ -636,8 +565,12 @@ footer .footer-desctop .contact {
 }
 footer .footer-desctop .contact .contactMap {
   display: flex;
+  flex-direction: column;
   gap: 10px;
   align-items: center;
+}
+footer .footer-desctop .contact .contactMap svg {
+  display: none;
 }
 footer .footer-desctop .contact .contactMap p {
   color: var(--Main-Regular, #323264);
@@ -653,8 +586,12 @@ footer .footer-desctop .contact .contactMap span a {
 }
 footer .footer-desctop .contact .contactOptions {
   display: flex;
+  flex-direction: column;
   gap: 10px;
   align-items: center;
+}
+footer .footer-desctop .contact .contactOptions .dot {
+  display: none;
 }
 footer .footer-desctop .contact .contactOptions span a {
   color: var(--Main-Alt, #46466E);
@@ -669,12 +606,39 @@ footer .footer-desctop .contact .contactOptions a {
 }
 footer .footer-desctop .contactText {
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
 }
 footer .footer-desctop .contactText p {
   color: var(--Grey-Text, #B3B3BA);
   text-align: right;
   font-size: 16px;
   font-weight: 400;
+}
+@media screen and (min-width: 1200px) {
+  footer .footer-desctop {
+    flex-direction: row;
+  }
+  footer .footer-desctop .contact {
+    gap: 21px;
+  }
+  footer .footer-desctop .contact .contactMap {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+  }
+  footer .footer-desctop .contact .contactMap svg {
+    display: block;
+  }
+  footer .footer-desctop .contact .contactOptions {
+    flex-direction: row;
+  }
+  footer .footer-desctop .contact .contactOptions .dot {
+    display: block;
+  }
+  footer .footer-desctop .contact .contactText {
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
 }/*# sourceMappingURL=main.css.map */

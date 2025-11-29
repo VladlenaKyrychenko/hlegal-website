@@ -6,7 +6,6 @@
 
 @import "layout/header";
 @import "layout/banner";
-@import "layout/footer";
 
 
 
@@ -535,70 +534,4 @@ h4 {
   }
 }
 
-
-  footer{
-        background: var(--Grey-Bg, #F5F5FA);
-    
- .line-bottom{
-            height: 2px;
-            align-self: stretch;
-           background: var(--Grey-Separator, #E6E6F0); 
-           margin-bottom: 30px;
-        } 
- .footer-desctop{
-            display: flex;
-            justify-content: space-between;
-  .contact{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 21px;
-         .contactMap{
-            display: flex;
-            gap: 10px;
-            align-items: center;
-             p{
-                color: var(--Main-Regular, #323264);
-                font-size: 16px;
-                font-weight: 400;
-            }
-             span a{
-                color: $maincolor;
-                font-size: 12px;
-                font-weight: 700;
-                letter-spacing: 1px;
-                text-transform: uppercase;
-            }
-        }
-         .contactOptions{
-            display: flex;
-            gap: 10px;
-            align-items: center;
-             span a{
-                color: var(--Main-Alt, #46466E);
-                text-align: right;
-                font-size: 16px;
-                font-weight: 700;
-            }
-             a{
-               color:$maincolor;
-                font-size: 16px;
-                font-weight: 700;
-            }
-        }
-    }
-    .contactText{
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-start;
-        p{
-            color: var(--Grey-Text, #B3B3BA);
-            text-align: right;
-            font-size: 16px;
-            font-weight: 400;
-        }
-
-    }
-        }
-    
-    }
+@import './layout/footer'
