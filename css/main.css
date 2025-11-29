@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import "/style/reset.css";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
 body {
@@ -125,6 +124,89 @@ footer .footer-desctop .contactText p {
   font-weight: 400;
 }
 
+.header-desktop {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 32px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+.header-desktop nav a.active {
+  background: #F0145A;
+}
+.header-desktop .header-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 18.5px;
+}
+.header-desktop .contact-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+.header-desktop .lang ul {
+  display: flex;
+}
+.header-desktop .lang ul li {
+  color: #FFF;
+  text-align: center;
+  border-radius: 8px;
+  background: transparent;
+  padding: 5px 7px;
+}
+.header-desktop .lang ul li a .active {
+  background: #F0145A;
+}
+.header-desktop .lang ul li:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.header-desktop .lang ul a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+.header-desktop .contact {
+  color: #FFF;
+  font-weight: 400;
+}
+.header-desktop .contact ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+.header-desktop .contact .phone {
+  font-weight: 700;
+}
+.header-desktop .contact .facebookLogo:hover path {
+  fill: #F0145A;
+}
+.header-desktop .desctop-nav ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+.header-desktop .desctop-nav ul a {
+  color: #FFF;
+  font-weight: 700;
+}
+.header-desktop .desctop-nav ul li::after {
+  display: block;
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: 0.4s;
+}
+.header-desktop .desctop-nav ul li:hover::after {
+  width: 100%;
+}
+
 .experience {
   display: flex;
   flex-direction: column;
@@ -134,6 +216,7 @@ footer .footer-desctop .contactText p {
   margin-bottom: 40px;
 }
 .experience .experience-list nav ul {
+  width: 100%;
   display: flex;
   flex-direction: row;
   overflow: auto;
@@ -221,6 +304,31 @@ footer .footer-desctop .contactText p {
     font-size: 19px;
     width: 100%;
   }
+}
+
+.activeLink {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  transition: 0.4s;
+  margin-bottom: 10px;
+}
+.activeLink a {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #24A3FF;
+  transition: 0.4s;
+}
+.activeLink svg path {
+  transition: 0.4s;
+}
+.activeLink:hover a {
+  color: #F0145A;
+}
+.activeLink:hover svg path {
+  stroke: #F0145A;
 }
 
 .services {
@@ -318,6 +426,63 @@ footer .footer-desctop .contactText p {
     height: 92px;
     margin-bottom: 30px;
   }
+}
+
+.carousel-slider {
+  padding: 0 30px;
+}
+.carousel-slider .carousel-post {
+  display: flex;
+  flex-direction: column;
+  background: var(--Grey-Bg, #F5F5FA);
+}
+.carousel-slider .carousel-post img {
+  border-radius: 12px 12px 0 0;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.carousel-slider .carousel-post .carousel-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+}
+.carousel-slider .carousel-post .carousel-info h4 {
+  background: var(--Gradient-Red-Text, linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.carousel-slider .carousel-post .carousel-info .name {
+  color: var(--Grey-Text, #B3B3BA);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.carousel-slider .carousel-post .carousel-info p {
+  color: var(--Grey-Text, #B3B3BA);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.owl-dots {
+  text-align: center;
+}
+.owl-dots .owl-dot span {
+  display: inline-block;
+  gap: 15px;
+  height: 12px;
+  width: 12px;
+  margin: 10px;
+  border-radius: 50%;
+  background-color: lightblue;
+}
+.owl-dots .owl-dot.active span {
+  background-color: #24A3FF;
 }
 
 .sponsors p {
@@ -448,150 +613,6 @@ footer .footer-desctop .contactText p {
   .publications .publication-postItem .post-info {
     padding: 30px;
   }
-}
-
-.header-desktop {
-  width: 100%;
-  position: absolute;
-  z-index: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  top: 32px;
-  padding-left: 60px;
-  padding-right: 60px;
-}
-.header-desktop nav a.active {
-  background: #F0145A;
-}
-.header-desktop .header-contact {
-  display: flex;
-  flex-direction: column;
-  gap: 18.5px;
-}
-.header-desktop .contact-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 6px;
-}
-.header-desktop .lang ul {
-  display: flex;
-}
-.header-desktop .lang ul li {
-  color: #FFF;
-  text-align: center;
-  border-radius: 8px;
-  background: transparent;
-  padding: 5px 7px;
-}
-.header-desktop .lang ul li a .active {
-  background: #F0145A;
-}
-.header-desktop .lang ul li:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-.header-desktop .lang ul a {
-  font-family: "Montserrat", sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-}
-.header-desktop .contact {
-  color: #FFF;
-  font-weight: 400;
-}
-.header-desktop .contact ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 6px;
-}
-.header-desktop .contact .phone {
-  font-weight: 700;
-}
-.header-desktop .contact .facebookLogo:hover path {
-  fill: #F0145A;
-}
-.header-desktop .desctop-nav ul {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-}
-.header-desktop .desctop-nav ul a {
-  color: #FFF;
-  font-weight: 700;
-}
-.header-desktop .desctop-nav ul li::after {
-  display: block;
-  content: "";
-  width: 0;
-  height: 2px;
-  background-color: white;
-  transition: 0.4s;
-}
-.header-desktop .desctop-nav ul li:hover::after {
-  width: 100%;
-}
-
-.activeLink {
-  display: flex;
-  gap: 5px;
-  align-items: center;
-  transition: 0.4s;
-  margin-bottom: 10px;
-}
-.activeLink a {
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #24A3FF;
-  transition: 0.4s;
-}
-.activeLink svg path {
-  transition: 0.4s;
-}
-.activeLink:hover a {
-  color: #F0145A;
-}
-.activeLink:hover svg path {
-  stroke: #F0145A;
-}
-
-.carousel .carousel-post {
-  display: flex;
-  border-radius: 12px;
-  background: var(--Grey-Bg, #F5F5FA);
-}
-.carousel .carousel-post img {
-  width: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.carousel .carousel-post .carousel-info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 30px;
-}
-.carousel .carousel-post .carousel-info h4 {
-  background: var(--Gradient-Red-Text, linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 38px;
-  font-weight: 700;
-}
-.carousel .carousel-post .carousel-info .name {
-  color: var(--Grey-Text, #B3B3BA);
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-.carousel .carousel-post .carousel-info p {
-  color: var(--Grey-Text, #B3B3BA);
-  font-size: 14px;
-  font-weight: 400;
 }
 
 footer {
