@@ -12,6 +12,42 @@
 <body>
   
 <header>
+  <div class="header-mobile">
+    <div class="top-header">
+    <div class="lang">
+        <ul>
+            <li><a href="#">UA</a></li>
+            <li><a href="#">RU</a></li>
+            <li ><a href="#"class="active">EN</a></li>
+        </ul>
+     </div>
+  <div class="contact">
+    <a class="phone" href="#">0800 211 927</a> 
+</div>
+</div>
+<div class="bottom-header">
+ <a href="#"> <img src="./img/Logo.svg" alt="logo">
+   </a>  
+ <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+<div id="mobileMenu" class="mobile-menu">
+  <div class="menu-header">
+    <button class="close-btn" onclick="toggleMenu()">✕</button>
+  </div>
+  <ul>
+    <li><a href="#" >about us</a></li>
+    <li><a href="#">services</a></li>
+    <li><a href="#">team</a></li>
+    <li><a href="#" class="current">publication</a></li>
+    <li><a href="#">contact</a></li>
+  </ul>
+</div>
+  </div>
 <div class="header-desktop">
        <a href="#"> <img src="./img/Logo.svg" alt="logo">
    </a> 
@@ -72,11 +108,11 @@
 </svg>
 
     </section>
-<section class="experience ">
-    <div class="experience-list">
-        <nav>
-            <ul>
-                <li><a href="#">Consistent</a>
+<section>
+  <div class="experience">
+    <div class="scroll-wrapper">
+      <ul class="experience-scroll">
+                <li><a class="current" href="#">Consistent</a>
                 </li>
                 <li><a href="#">Customer oriented</a>
                 </li>
@@ -85,13 +121,14 @@
                 <li><a href="#">Business oriented</a>
                 </li>
             </ul>
-        </nav>
     </div>
+    
     <div class="line-vert"></div>
     <div class="description">
         <h3>We turn the idea of legal services</h3>
         <p>Consolidating many years of experience and practice, the company's lawyers accompany complex projects and achieve a number of important decisions for the industry. Many of them form the practice of applying the law of the sea in Ukraine.</p>
     </div>
+  </div>
   </section>
 <section class="services">
        <div class="activeLink">      

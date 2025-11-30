@@ -12,3 +12,8 @@ responsive:{
     }
 }
 });
+
+function toggleMenu() {
+  document.getElementById("mobileMenu").classList.toggle("open");
+  document.getElementById("overlay").classList.toggle("open");
+}
