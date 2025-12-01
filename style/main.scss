@@ -258,7 +258,7 @@ a.current {
   .experience-scroll {
   display: flex;
   gap: 20px;
-  width: max-content;  
+   
   li {
   flex: none;
   font-size: 30px;
@@ -302,15 +302,16 @@ background-clip: text;
   }
 
   // Desktop
-  @include min-screen(1200px) {
+  @include min-screen(1024px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 60px;
-    .scroll-wrapper{
-        width: auto;
+    .scroll-wrapper{ 
+      width: auto;
       -webkit-overflow-scrolling: none; 
+      white-space: normal;
       .experience-scroll{
         display: flex;
         flex-direction: column;
@@ -339,7 +340,7 @@ background-clip: text;
     .description {
      justify-content: space-between;
         align-items: flex-start;
-      max-width: 580px;
+      max-width: 581px;
 
       h3 { font-size: 30px; }
       p {
@@ -499,7 +500,6 @@ h4 {
         font-size: 32px;
         font-weight: 700;
         margin-bottom: 30px;
-        max-height: 400px;
       }
      .name {
         color: var(--Grey-Text,#B3B3BA);
@@ -515,7 +515,12 @@ h4 {
       }
     }
   }
-  @include min-screen(1200px){
+  @include min-screen(648px){
+.carousel-post{
+  max-width: fit-content;
+}
+  }
+  @include min-screen(1024px){
        .carousel-post{
         display: flex;
         flex-direction: row;
@@ -560,14 +565,50 @@ h4 {
             color: #323264;
             margin-bottom: 32px;
         }
-        .sponsors-list{
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-
+        .sponsors-grid{
+         display: grid;
+         grid-template-columns: 1fr;
+         width: 100%;
+         .sponsor{
+          height: 120px;                     // мобілка
+          display: flex;
+          justify-content: center;
+          align-items: center;
+         }
+        
+     
     img {
-      max-width: 100%;
-      height: auto;
+      max-width: 70%;
+    max-height: 70%;
+
+    }
+}
+.sponsor:nth-child(n+7) {
+  display: none;
+}
+@include min-screen(500px) {
+    .sponsors-grid {
+    grid-template-columns: repeat(2, 1fr);
+     .sponsor {
+    display: flex ;
+  }
+  }
+}
+@include min-screen(648px) {
+    .sponsors-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@include min-screen(904px) {
+    .sponsors-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+ 
+    @include min-screen(1024px) {
+    .sponsors-grid {
+    grid-template-columns: repeat(4, 1fr);
+    img {
       opacity: 0.7;
       transition: 0.3s;
 
@@ -575,21 +616,7 @@ h4 {
         opacity: 1;
       }
     }
-}
-
-@include min-screen(768px) {
-    .sponsors-list{  
-        display: flex;
-        flex-direction: inherit;
-      flex-wrap: wrap;
   }
-}
- 
-    @include min-screen(1024px) {
-    .sponsors__list{ 
-     display: flex;
-    flex-wrap: wrap;
-    }
   }
 }
 .publications {
@@ -608,8 +635,8 @@ h4 {
 
 
   &-post {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 30px;
   }
 
@@ -621,6 +648,7 @@ h4 {
     background: #fff;
     border-radius: 8px;
     overflow: hidden;
+    
 
     img {
       width: 100%;
@@ -662,32 +690,32 @@ h4 {
   }
 
  
-  @include min-screen(768px) {
+  @include min-screen(648px) {
+    .publications-post{
+      grid-template-columns: repeat(2, 1fr);
+    }
+     
+  .publication-postItem:nth-child(3) {
+    grid-column: 1 / 3;  
+  }
     h2 {
       font-size: 34px;
       margin-bottom: 50px;
     }
-
-    &-post {
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
-
-    .publication-postItem {
-      width: calc(50% - 15px);
-    }
   }
 
   
-   @include min-screen(1200px) {
+   @include min-screen(1024px) {
+    .publications-post{
+      grid-template-columns: repeat(3, 1fr);
+    }
     h2 {
       font-size: 38px;
       margin-bottom: 60px;
     }
 
-    .publication-postItem {
-      width: calc(33.33% - 20px);
+    .publication-postItem:nth-child(3) {
+      grid-column: auto;
 
       img {
         height: 220px;

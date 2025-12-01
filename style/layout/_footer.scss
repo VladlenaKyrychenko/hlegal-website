@@ -79,7 +79,7 @@ footer{
                                  } 
                                 } 
                             } 
-                            @include min-screen(1200px) {
+                            @include min-screen(768px) {
                                 .footer-desctop{
                                     flex-direction: row; 
                                     
