@@ -26,7 +26,6 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-bottom: 40px;
 }
 .header-banner p {
   color: #fff;
@@ -43,7 +42,6 @@ body {
 }
 @media screen and (min-width: 1200px) {
   .header-banner {
-    margin-bottom: 60px;
     background-size: contain;
   }
 }
@@ -72,7 +70,6 @@ header .header-mobile .top-header .lang ul {
 header .header-mobile .top-header .lang ul li {
   text-align: center;
   border-radius: 8px;
-  background: transparent;
   padding: 5px 7px;
 }
 header .header-mobile .top-header .lang ul a {
@@ -83,7 +80,7 @@ header .header-mobile .top-header .lang ul a {
   letter-spacing: 1px;
   text-align: center;
 }
-header .header-mobile .top-header .lang ul a .active {
+header .header-mobile .top-header .lang ul li.active {
   background: #F0145A;
 }
 header .header-mobile .top-header .phone {
@@ -109,6 +106,9 @@ header .header-mobile .bottom-header .hamburger span {
   background: white;
   height: 2px;
   width: 100%;
+}
+header .header-mobile .bottom-header .desctop-nav {
+  display: none;
 }
 header .header-mobile .overlay {
   position: fixed;
@@ -175,17 +175,54 @@ header .header-mobile .mobile-menu a.current {
 header .header-mobile .mobile-menu.open {
   bottom: 0;
 }
+@media screen and (min-width: 648px) and (max-width: 1199px) {
+  header {
+    /* Put CONTACT block ABOVE the logo */
+    /* Logo stays in the middle section */
+    /* Navigation goes UNDER the logo */
+    /* SD version only: full width nav */
+  }
+  header .header-mobile {
+    display: none;
+  }
+  header .header-desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 40px;
+    position: absolute;
+    z-index: 1;
+    top: 32px;
+    gap: 24px;
+  }
+  header .header-contact {
+    order: 1;
+    width: 100%;
+  }
+  header .header-desktop > a {
+    order: 2;
+  }
+  header .desctop-nav {
+    order: 3;
+    width: 100%;
+  }
+  header .desctop-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}
 @media screen and (min-width: 1200px) {
   header .header-mobile {
     display: none;
   }
   header .header-desktop {
-    width: 100%;
-    position: absolute;
-    z-index: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
     top: 32px;
     padding-left: 60px;
     padding-right: 60px;
@@ -211,10 +248,9 @@ header .header-mobile .mobile-menu.open {
     color: #FFF;
     text-align: center;
     border-radius: 8px;
-    background: transparent;
     padding: 5px 7px;
   }
-  header .header-desktop .lang ul li a .active {
+  header .header-desktop .lang ul li.active {
     background: #F0145A;
   }
   header .header-desktop .lang ul li:hover {
@@ -235,8 +271,15 @@ header .header-mobile .mobile-menu.open {
     align-items: center;
     gap: 6px;
   }
-  header .header-desktop .contact .phone {
+  header .header-desktop .contact a.adress {
+    color: #FFF;
+    font-weight: 400;
+    font-size: 16px;
+  }
+  header .header-desktop .contact a.phone {
+    color: #FFF;
     font-weight: 700;
+    font-family: "Montserrat", sans-serif;
   }
   header .header-desktop .contact .facebookLogo:hover path {
     fill: #F0145A;
@@ -268,8 +311,7 @@ header .header-mobile .mobile-menu.open {
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  padding: 0 30px;
-  margin-bottom: 40px;
+  padding: 30px 30px;
 }
 .experience .scroll-wrapper {
   width: 100%;
@@ -324,9 +366,10 @@ header .header-mobile .mobile-menu.open {
     justify-content: center;
     align-items: center;
     gap: 60px;
+    padding: 60px 60px;
   }
   .experience .scroll-wrapper {
-    width: auto;
+    flex: 0 0 400px;
     -webkit-overflow-scrolling: none;
     white-space: normal;
   }
@@ -353,9 +396,10 @@ header .header-mobile .mobile-menu.open {
     background: rgba(255, 255, 255, 0.3);
   }
   .experience .description {
+    flex: 1;
+    max-width: 830px;
     justify-content: space-between;
     align-items: flex-start;
-    max-width: 581px;
   }
   .experience .description h3 {
     font-size: 30px;
@@ -363,6 +407,7 @@ header .header-mobile .mobile-menu.open {
   .experience .description p {
     font-size: 19px;
     width: 100%;
+    align-self: stretch;
   }
 }
 
@@ -394,6 +439,7 @@ header .header-mobile .mobile-menu.open {
 .services {
   display: flex;
   flex-direction: column;
+  gap: 30px;
   padding: 0 30px 30px;
   /* TABLET */
   /* DESKTOP */
@@ -401,14 +447,14 @@ header .header-mobile .mobile-menu.open {
 .services h2 {
   font-size: 32px;
   font-weight: 700;
-  margin-bottom: 40px;
   background: linear-gradient(90deg, #F0145A, #EF8080);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .services-item {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
   gap: 40px;
 }
 .services-item .item1, .services-item .item2, .services-item .item3, .services-item .item4, .services-item .item5, .services-item .item6 {
@@ -452,27 +498,25 @@ header .header-mobile .mobile-menu.open {
 .services-item .item6::before {
   background-image: url(../img/homepage/Icon6.svg);
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 648px) {
   .services-item {
-    flex-direction: row;
-    flex-wrap: wrap;
+    grid-template-columns: repeat(2, 1fr);
     gap: 40px;
-    justify-content: space-between;
-  }
-  .services-item .item1, .services-item .item2, .services-item .item3, .services-item .item4, .services-item .item5, .services-item .item6 {
-    max-width: calc(50% - 20px);
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
+  .services {
+    padding: 0 60px 60px;
+  }
+  .services-item {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
   .services h2 {
     font-size: 38px;
-    margin-bottom: 60px;
   }
   .services-item {
     gap: 60px;
-  }
-  .services-item .item1, .services-item .item2, .services-item .item3, .services-item .item4, .services-item .item5, .services-item .item6 {
-    max-width: 493px;
   }
   .services-item .item1 h4, .services-item .item2 h4, .services-item .item3 h4, .services-item .item4 h4, .services-item .item5 h4, .services-item .item6 h4 {
     font-size: 22px;
@@ -486,6 +530,22 @@ header .header-mobile .mobile-menu.open {
     height: 92px;
     margin-bottom: 30px;
   }
+}
+
+.border1 {
+  border-radius: 0 0 12px 12px;
+  background: #CACADB;
+  width: 95%;
+  height: 10px;
+  margin: 0 auto;
+}
+
+.border2 {
+  border-radius: 0 0 12px 12px;
+  background: #E7E7F2;
+  width: 90%;
+  height: 10px;
+  margin: 0 auto;
 }
 
 .carousel-slider {
@@ -530,6 +590,9 @@ header .header-mobile .mobile-menu.open {
   font-weight: 400;
 }
 @media screen and (min-width: 648px) {
+  .carousel-slider {
+    padding: 60px 60px 30px;
+  }
   .carousel-slider .carousel-post {
     max-width: fit-content;
   }
@@ -625,6 +688,9 @@ header .header-mobile .mobile-menu.open {
 }
 
 .publications {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   background: var(--Grey-Bg, #F5F5FA);
   padding: 30px 30px;
 }
@@ -634,7 +700,6 @@ header .header-mobile .mobile-menu.open {
   background: var(--Gradient-Red-Text, linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 40px;
 }
 .publications-post {
   display: grid;
@@ -682,6 +747,9 @@ header .header-mobile .mobile-menu.open {
   line-height: 22px;
 }
 @media screen and (min-width: 648px) {
+  .publications {
+    padding: 30px 60px;
+  }
   .publications .publications-post {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -690,7 +758,6 @@ header .header-mobile .mobile-menu.open {
   }
   .publications h2 {
     font-size: 34px;
-    margin-bottom: 50px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -699,7 +766,6 @@ header .header-mobile .mobile-menu.open {
   }
   .publications h2 {
     font-size: 38px;
-    margin-bottom: 60px;
   }
   .publications .publication-postItem:nth-child(3) {
     grid-column: auto;
@@ -720,7 +786,7 @@ header .header-mobile .mobile-menu.open {
 }
 
 footer {
-  padding: 30px 30px;
+  padding: 0 30px 30px;
   background: var(--Grey-Bg, #F5F5FA);
 }
 footer .footer-desctop {
@@ -813,5 +879,13 @@ footer .footer-desctop .contactText p {
   footer .footer-desctop .contact .contactText {
     justify-content: flex-end;
     align-items: flex-start;
+  }
+}
+@media screen and (min-width: 1024px) {
+  footer .contactOptions .logo-fb:hover svg path {
+    fill: #F0145A;
+  }
+  footer .contactOptions a:hover {
+    color: #F0145A;
   }
 }

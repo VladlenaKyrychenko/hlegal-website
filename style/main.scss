@@ -31,7 +31,6 @@ header{
         li{
             text-align: center;
             border-radius: 8px;
-            background: transparent;
             padding: 5px 7px;
         }
             a{
@@ -42,8 +41,9 @@ header{
                 letter-spacing: 1px;
                 text-align: center;
             }
-             a .active{
+             li.active{
             background: $activecolor;
+            
             }  
     }
 
@@ -72,6 +72,9 @@ header{
   width: 100%;
 
 }
+}
+.desctop-nav{
+  display: none;
 }
 }
 .overlay {
@@ -142,17 +145,60 @@ a.current {
   bottom: 0;
 }
 }
+@include min-screen(648px) {
+  @include max-screen(1199px) {
+.header-mobile{
+  display: none;
+}
+    .header-desktop {
+      display: flex;
+      flex-direction: column;     // Stack vertically (SD version)
+      align-items: flex-start;
+      padding: 20px 40px;
+       position: absolute;
+    z-index: 1;
+    top: 32px;
+    
+
+      gap: 24px;
+    }
+
+    /* Put CONTACT block ABOVE the logo */
+    .header-contact {
+      order: 1;
+      width: 100%;
+    }
+
+    /* Logo stays in the middle section */
+    .header-desktop > a {
+      order: 2;
+    }
+
+    /* Navigation goes UNDER the logo */
+    .desctop-nav {
+      order: 3;
+      width: 100%;
+    }
+
+    /* SD version only: full width nav */
+    .desctop-nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+  }
+}
 @include min-screen(1200px){
 .header-mobile{
-    display: none;
+  display: none;
 }
 .header-desktop{
-     width: 100%;
-    position: absolute;
-    z-index: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
+   width: 100%;
+    position: absolute;
+    z-index: 1;
     top: 32px;
     padding-left: 60px;
     padding-right: 60px;
@@ -178,14 +224,12 @@ a.current {
             color: #FFF;
             text-align: center;
             border-radius: 8px;
-            background: transparent;
             padding: 5px 7px;
             
-            a .active{
+            }
+              li.active{
             background: $activecolor;
             }
-            }
-             
             li:hover{
             background: rgba(255, 255, 255, 0.20);
             }
@@ -205,8 +249,15 @@ a.current {
         align-items: center;
         gap: 6px;
         }
-            .phone{
+        a.adress{
+          color: #FFF;
+        font-weight: 400;
+        font-size: 16px;
+        }
+           a.phone{
+            color: #FFF;
             font-weight: 700;
+            font-family: "Montserrat", sans-serif;
         }
          .facebookLogo:hover path{
         fill: $activecolor;
@@ -242,8 +293,8 @@ a.current {
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  padding: 0 30px;
-  margin-bottom: 40px;
+  padding: 30px 30px;
+  
 
  
 .scroll-wrapper {
@@ -308,8 +359,9 @@ background-clip: text;
     justify-content: center;
     align-items: center;
     gap: 60px;
+    padding: 60px 60px;
     .scroll-wrapper{ 
-      width: auto;
+      flex: 0 0 400px;
       -webkit-overflow-scrolling: none; 
       white-space: normal;
       .experience-scroll{
@@ -338,14 +390,17 @@ background-clip: text;
     }
 
     .description {
+      flex: 1;
+      max-width: 830px;
      justify-content: space-between;
         align-items: flex-start;
-      max-width: 581px;
+      
 
       h3 { font-size: 30px; }
       p {
          font-size: 19px; 
         width: 100%;
+        align-self: stretch;
 }
     }
   }
@@ -380,20 +435,22 @@ background-clip: text;
      .services {
   display: flex;
   flex-direction: column;
+  gap: 30px;
   padding: 0 30px 30px;
+  
   
   h2 {
     font-size: 32px;
     font-weight: 700;
-    margin-bottom: 40px;
     background: linear-gradient(90deg, #F0145A, #EF8080);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   &-item {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
     gap: 40px;
 
     .item1, .item2, .item3, .item4, .item5, .item6 {
@@ -432,31 +489,35 @@ background-clip: text;
   }
 
   /* TABLET */
-  @include min-screen(768px) {
+  @include min-screen(648px) {
     &-item {
-      flex-direction: row;
-      flex-wrap: wrap;
+      grid-template-columns: repeat(2, 1fr);
       gap: 40px;
-      justify-content: space-between;
+      
 
-      .item1, .item2, .item3, .item4, .item5, .item6 {
-        max-width: calc(50% - 20px);
-      }
+      
     }
   }
 
   /* DESKTOP */
-  @include min-screen(1200px) {
+  @include min-screen(1024px) {
+    padding: 0 60px 60px;
+     &-item {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      
+
+      
+    }
     h2 {
       font-size: 38px;
-      margin-bottom: 60px;
     }
 
     &-item {
       gap: 60px;
 
       .item1, .item2, .item3, .item4, .item5, .item6 {
-        max-width: 493px;
+        
 
         h4 { font-size: 22px; }
         p { font-size: 16px; line-height: 26px; }
@@ -470,6 +531,21 @@ background-clip: text;
     }
   }
 }
+.border1{
+border-radius: 0 0 12px 12px;
+background: #CACADB;
+width: 95%;
+height: 10px;
+margin: 0 auto;
+}
+.border2{
+border-radius: 0 0 12px 12px;
+background: #E7E7F2;
+width: 90%;
+height: 10px;
+margin: 0 auto;
+}
+
   
 .carousel-slider {
     padding: 30px;
@@ -516,6 +592,7 @@ h4 {
     }
   }
   @include min-screen(648px){
+    padding: 60px 60px 30px;
 .carousel-post{
   max-width: fit-content;
 }
@@ -620,6 +697,9 @@ h4 {
   }
 }
 .publications {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   background: var(--Grey-Bg, #F5F5FA);
   padding: 30px 30px;
 
@@ -630,7 +710,7 @@ h4 {
     background: var(--Gradient-Red-Text, linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 40px;
+    
   }
 
 
@@ -691,6 +771,7 @@ h4 {
 
  
   @include min-screen(648px) {
+    padding: 30px 60px;
     .publications-post{
       grid-template-columns: repeat(2, 1fr);
     }
@@ -700,7 +781,7 @@ h4 {
   }
     h2 {
       font-size: 34px;
-      margin-bottom: 50px;
+      
     }
   }
 
@@ -711,7 +792,7 @@ h4 {
     }
     h2 {
       font-size: 38px;
-      margin-bottom: 60px;
+      
     }
 
     .publication-postItem:nth-child(3) {

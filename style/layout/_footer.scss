@@ -5,7 +5,7 @@
          margin-bottom: 30px; 
         } 
 footer{
-    padding: 30px 30px;
+    padding: 0 30px 30px;
      background: var(--Grey-Bg, #F5F5FA); 
      
      
@@ -66,6 +66,7 @@ footer{
                                     font-weight: 700;
                                  } 
                                 } 
+                               
                             } 
                             .contactText{ 
                                 display: flex; 
@@ -108,5 +109,16 @@ footer{
                                 }
                                 }
                                
+                            }
+                            @include min-screen(1024px){
+
+                                .contactOptions{
+    .logo-fb:hover svg path{
+        fill: $activecolor;
+    }
+     a:hover{
+color: $activecolor;
+    }
+}
                             }
                         }
