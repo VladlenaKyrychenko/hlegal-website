@@ -445,7 +445,7 @@ header .header-mobile .mobile-menu.open {
   /* DESKTOP */
 }
 .services h2 {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 700;
   background: linear-gradient(90deg, #F0145A, #EF8080);
   -webkit-background-clip: text;
@@ -695,7 +695,7 @@ header .header-mobile .mobile-menu.open {
   padding: 30px 30px;
 }
 .publications h2 {
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 700;
   background: var(--Gradient-Red-Text, linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%));
   -webkit-background-clip: text;

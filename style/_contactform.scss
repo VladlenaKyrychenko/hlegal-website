@@ -1,0 +1,16 @@
+
+.contact-wrapper{
+    padding: 200px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    .adress-block{
+        li{
+          color: var(--Main-Regular, #323264);
+        font-size: 21px;
+        font-style: normal;
+        font-weight: 400;
+ 
+        }
+    }
+}
