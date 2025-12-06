@@ -1,35 +1,4 @@
-body.inner-page{
-  .header-mobile{
-    position: static;
-    .top-header{
-       background: var(--Grey-Bg, #F5F5FA);
 
-       .lang ul li.active a{
-        color: white;
-       }
-       .lang ul li a{ 
-            color: var(--Grey-Text, #B3B3BA);
-            }
-      
-.bottom-header{
-.pageName{
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  span{
-    display: flex;
-    color: white;
-  }
-  svg{
-    width: 11.617px;
-    height: 26px;
-  }
-}
-}
-  }
-  
-}
-}
 header{
 .header-desktop{
         display: none;
@@ -63,12 +32,12 @@ header{
             padding: 5px 7px;
         }
             a{
-            font-weight: $mainfont;
+            font-family: $mainfont;
             color: #FFF;
             font-size: 12px;
-                font-weight: 700;
-                letter-spacing: 1px;
-                text-align: center;
+            font-weight: 700;
+            letter-spacing: 1px;
+             text-align: center;
             }
              li.active{
             background: $activecolor;
@@ -87,13 +56,8 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  .logoPage{
-    display: flex;
-    align-items: center;
-  }
-  .desctop-nav{
-    display: none;
-  }
+  
+ 
 .hamburger {
   cursor: pointer;
 
@@ -102,9 +66,7 @@ header{
   height: 32px;
  }
 }
-.desctop-nav{
-  display: none;
-}
+
 }
 .overlay {
   position: fixed;
@@ -113,7 +75,7 @@ header{
   visibility: hidden;
   opacity: 0;
   transition: 0.3s;
-  z-index: 900;
+  z-index: 9999;
 }
 
 .overlay.open {
@@ -131,7 +93,7 @@ header{
   border-top-right-radius: 20px;
   box-shadow: 0 -10px 35px rgba(0, 0, 0, 0.1);
   transition: bottom 0.45s ease;
-  z-index: 1000;
+  z-index: 10000;
 
 .menu-header {
   display: flex;
@@ -193,6 +155,7 @@ a.current {
       .lang ul{
          li:hover{
             background: rgba(255, 255, 255, 0.20);
+            z-index: 10000;
             }
             li:active {
               background: $activecolor;
@@ -309,9 +272,14 @@ a.current {
             }
               li.active{
             background: $activecolor;
+            a{
+              color: white;
             }
+            }
+            
             li:hover{
             background: rgba(255, 255, 255, 0.20);
+            z-index: 10000;
             }
             li:active {
               background: $activecolor;
@@ -331,6 +299,11 @@ a.current {
         justify-content: space-between;
         align-items: center;
         gap: 6px;
+        li{
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
         }
         a.adress{
           color: #FFF;
@@ -371,3 +344,125 @@ a.current {
 }
 }
 } 
+body.inner-page header,
+body.inner-page .header-desktop,
+body.inner-page .header-mobile {
+  position: relative; 
+
+}
+body.inner-page{
+  .header-mobile{
+    .top-header{
+       background: var(--Grey-Bg, #F5F5FA);
+
+       .lang ul li.active a{
+        color: white;
+       }
+       .lang ul li a{ 
+            color: var(--Grey-Text, #B3B3BA);
+            }
+            .contact-mob a{
+              color: var(--Grey-Text, #B3B3BA);
+            }
+     
+      }
+  }
+ @include min-screen(648px) {
+        @include max-screen(1023px){
+          .header-mobile{
+            .top-header{
+        background: transparent;
+        .lang ul{
+         li:hover{
+            background: #F5F5FA;
+            }
+      }
+        .contact {
+            ul{  
+      li{ 
+        color: var(--Grey-Text, #B3B3BA) 
+      }
+        }
+        a.adress{
+          color: var(--Grey-Text, #B3B3BA);
+        
+        }
+           a.phone{
+            color: var(--Grey-Text, #B3B3BA);
+            
+        }
+        
+         .facebookLogo:hover path{
+        fill: $activecolor;
+        }
+      }
+            }
+          }
+    }     
+        }
+        @include min-screen(1024px){
+      .header-desktop{
+    .header-contact{
+    .contact-info{
+        .lang ul{
+            li{
+            color: var(--Grey-Text, #B3B3BA);
+            }
+            li.active{
+        color: white;
+       }
+            li:hover{
+            background: #F5F5FA;
+            }      
+    }
+          .contact {
+            ul{  
+      li{ 
+        color: var(--Grey-Text, #B3B3BA) 
+      }
+        }
+        a.adress{
+          color: var(--Grey-Text, #B3B3BA);
+        
+        }
+           a.phone{
+            color: var(--Grey-Text, #B3B3BA);
+            
+        }
+        
+      }
+    }
+    
+    }
+  }
+        }
+}
+ 
+body.inner-page .desctop-nav ul a {
+  color: $maincolor;
+}
+
+body.inner-page .desctop-nav ul li::after {
+  background-color: #f0145a; 
+}
+body.inner-page .desctop-nav ul li:hover a {
+  color: $activecolor;
+}
+body.inner-page .logoPage {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+body.inner-page .logoPage::after {
+  content: attr(data-page-title);
+  color: var(--Main-Regular, #323264);
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+body.contact-page .logoPage {
+  --title: "contact";
+}

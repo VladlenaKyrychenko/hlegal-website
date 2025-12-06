@@ -1,17 +1,206 @@
 
+.form{
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
 
-.contact-wrapper{
-    padding: 200px 30px 30px;
+ .contact-wrapper{
     display: flex;
     flex-direction: column;
     gap: 30px;
+
     .adress-block{
         li{
           color: var(--Main-Regular, #323264);
         font-size: 21px;
         font-style: normal;
         font-weight: 400;
- 
-        }
+        line-height: 30px;
+        } 
     }
+    .line{
+      background: var(--Grey-Separator, #E6E6F0);
+      height: 4px;
+      align-self: stretch;
+    }
+    .contact-methods ul li{
+        color: var(--Main-Regular, #323264);
+        font-size: 21px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px;
+        
+        .contact-email{
+      color: var(--Active-Regular, #24A3FF);
+      font-size: 21px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 30px;
+    }
+    }
+     
+    .social-page{
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      p{
+        color: var(--Active-Regular, #24A3FF);
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+    }
+    .social-page:hover svg path{
+      fill: $activecolor;
+    }
+    .social-page:hover p{
+      color: $activecolor;
+    }
+} 
+.contact-form{ 
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+gap: 30px;
+border-radius: 12px;
+background: var(--Grey-Bg, #F5F5FA);
+padding: 30px;
+
+   h2{
+    font-size: 30px;
+    font-weight: 700;
+    background: var(--Gradient-Red-Text, linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+   }
+#contactForm{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+   input, textarea {
+    border-radius: 8px;
+    border: 1px solid var(--Basic-White, #FFF);
+    background: var(--Basic-White, #FFF);
+    padding: 15px;
+    color: var(--Grey-Text, #B3B3BA);
+    font-family: $mainfont;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+   }
+   textarea{
+    height: 130px;
+    resize: none;
+    width: 100%;
+   }
+   label{
+    color: var(--Grey-Text, #B3B3BA);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+   }
+   .form-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+   }
+
+   input:focus,
+    textarea:focus {
+      border: 1px solid var(--Active-Regular, #24A3FF);
+      background: var(--Basic-White, #FFF);
+      color: var(--Basic-Black, #000);
+
+    }
+     input:disabled,
+    textarea:disabled {
+      border-radius: 8px;
+      border: 1px solid var(--Grey-Bg-Alt, #EDEDF7);
+      background: var(--Grey-Bg-Alt, #EDEDF7);
+      color: var(--Grey-Text, #B3B3BA);
+    }
+    .invalid {
+    color: #FF0000;
+    border: 1px solid #F00;
+    background: var(--Basic-White, #FFF);
+}
+}
+button{
+  border-radius: 12px;
+  background: var(--Active-Regular, #24A3FF);
+  box-shadow: 0 0 20px 0 rgba(36, 163, 255, 0.50);
+  padding: 18px 30px;
+  color: var(--Basic-White, #FFF);
+  text-align: center;
+  font-family: $mainfont;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  position: relative;
+}
+button:hover{
+  background: var(--active-hover, #0085FF);
+  box-shadow: 0 0 20px 0 rgba(36, 163, 255, 0.50);
+}
+button:active, button:focus {
+  background: var(--active-active, #006CCF);
+  transform: scale(0.98);  
+}
+button.loading {
+background: var(--Grey-Bg-Alt, #EDEDF7);
+  color: transparent;
+  position: relative;
+  pointer-events: none;
+}
+
+button.loading::after {
+  content: "";
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 3px solid #d2d2db;
+  border-top-color: #24A3FF;
+  animation: spin 0.7s linear infinite;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+button.sent {
+  color: var(--Main-Regular, #323264);
+  background: var(--Grey-Bg-Alt, #EDEDF7);
+  pointer-events: none;
+  position: relative;
+}
+
+button.sent::after {
+  content: "Sent";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+}
+
+ @include min-screen(648px) {
+    padding: 60px;
+  }
+  @include min-screen(1024px) {
+  flex-direction: row;
+  gap: 60px;
+  }
+   @include min-screen(1300px) {
+    padding: 60px 180px;
+  }
 }

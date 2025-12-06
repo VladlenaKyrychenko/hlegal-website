@@ -16,75 +16,6 @@ body {
   padding: 0 30px;
 }
 
-.contact-wrapper {
-  padding: 200px 30px 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-.contact-wrapper .adress-block li {
-  color: var(--Main-Regular, #323264);
-  font-size: 21px;
-  font-style: normal;
-  font-weight: 400;
-}
-
-.header-banner {
-  min-height: 100vh;
-  background-image: url(../img/Symbol.svg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-.header-banner p {
-  color: #fff;
-  text-align: center;
-  font-size: 38px;
-  font-weight: 700;
-}
-.header-banner svg {
-  position: absolute;
-  bottom: 20px;
-}
-.header-banner svg:hover circle, .header-banner svg:hover path {
-  stroke: #F0145A;
-}
-@media screen and (min-width: 1200px) {
-  .header-banner {
-    background-size: contain;
-  }
-}
-
-body.inner-page .header-mobile {
-  position: static;
-}
-body.inner-page .header-mobile .top-header {
-  background: var(--Grey-Bg, #F5F5FA);
-}
-body.inner-page .header-mobile .top-header .lang ul li.active a {
-  color: white;
-}
-body.inner-page .header-mobile .top-header .lang ul li a {
-  color: var(--Grey-Text, #B3B3BA);
-}
-body.inner-page .header-mobile .top-header .bottom-header .pageName {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-body.inner-page .header-mobile .top-header .bottom-header .pageName span {
-  display: flex;
-  color: white;
-}
-body.inner-page .header-mobile .top-header .bottom-header .pageName svg {
-  width: 11.617px;
-  height: 26px;
-}
-
 header .header-desktop {
   display: none;
 }
@@ -118,7 +49,7 @@ header .header-mobile .top-header .lang ul li {
   padding: 5px 7px;
 }
 header .header-mobile .top-header .lang ul a {
-  font-weight: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #FFF;
   font-size: 12px;
   font-weight: 700;
@@ -139,22 +70,12 @@ header .header-mobile .bottom-header {
   justify-content: space-between;
   align-items: center;
 }
-header .header-mobile .bottom-header .logoPage {
-  display: flex;
-  align-items: center;
-}
-header .header-mobile .bottom-header .desctop-nav {
-  display: none;
-}
 header .header-mobile .bottom-header .hamburger {
   cursor: pointer;
 }
 header .header-mobile .bottom-header .hamburger svg {
   width: 32px;
   height: 32px;
-}
-header .header-mobile .bottom-header .desctop-nav {
-  display: none;
 }
 header .header-mobile .overlay {
   position: fixed;
@@ -163,7 +84,7 @@ header .header-mobile .overlay {
   visibility: hidden;
   opacity: 0;
   transition: 0.3s;
-  z-index: 900;
+  z-index: 9999;
 }
 header .header-mobile .overlay.open {
   visibility: visible;
@@ -180,7 +101,7 @@ header .header-mobile .mobile-menu {
   border-top-right-radius: 20px;
   box-shadow: 0 -10px 35px rgba(0, 0, 0, 0.1);
   transition: bottom 0.45s ease;
-  z-index: 1000;
+  z-index: 10000;
 }
 header .header-mobile .mobile-menu .menu-header {
   display: flex;
@@ -240,6 +161,7 @@ header .header-mobile .mobile-menu.open {
   }
   header .header-mobile .top-header .lang ul li:hover {
     background: rgba(255, 255, 255, 0.2);
+    z-index: 10000;
   }
   header .header-mobile .top-header .lang ul li:active {
     background: #F0145A;
@@ -350,8 +272,12 @@ header .header-mobile .mobile-menu.open {
   header .header-desktop .lang ul li.active {
     background: #F0145A;
   }
+  header .header-desktop .lang ul li.active a {
+    color: white;
+  }
   header .header-desktop .lang ul li:hover {
     background: rgba(255, 255, 255, 0.2);
+    z-index: 10000;
   }
   header .header-desktop .lang ul li:active {
     background: #F0145A;
@@ -368,6 +294,11 @@ header .header-mobile .mobile-menu.open {
   header .header-desktop .contact ul {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+  }
+  header .header-desktop .contact ul li {
+    display: flex;
     align-items: center;
     gap: 6px;
   }
@@ -406,17 +337,325 @@ header .header-mobile .mobile-menu.open {
   }
 }
 
-.contact-wrapper {
-  padding: 200px 30px 30px;
+body.inner-page header,
+body.inner-page .header-desktop,
+body.inner-page .header-mobile {
+  position: relative;
+}
+
+body.inner-page .header-mobile .top-header {
+  background: var(--Grey-Bg, #F5F5FA);
+}
+body.inner-page .header-mobile .top-header .lang ul li.active a {
+  color: white;
+}
+body.inner-page .header-mobile .top-header .lang ul li a {
+  color: var(--Grey-Text, #B3B3BA);
+}
+body.inner-page .header-mobile .top-header .contact-mob a {
+  color: var(--Grey-Text, #B3B3BA);
+}
+@media screen and (min-width: 648px) and (max-width: 1023px) {
+  body.inner-page .header-mobile .top-header {
+    background: transparent;
+  }
+  body.inner-page .header-mobile .top-header .lang ul li:hover {
+    background: #F5F5FA;
+  }
+  body.inner-page .header-mobile .top-header .contact ul li {
+    color: var(--Grey-Text, #B3B3BA);
+  }
+  body.inner-page .header-mobile .top-header .contact a.adress {
+    color: var(--Grey-Text, #B3B3BA);
+  }
+  body.inner-page .header-mobile .top-header .contact a.phone {
+    color: var(--Grey-Text, #B3B3BA);
+  }
+  body.inner-page .header-mobile .top-header .contact .facebookLogo:hover path {
+    fill: #F0145A;
+  }
+}
+@media screen and (min-width: 1024px) {
+  body.inner-page .header-desktop .header-contact .contact-info .lang ul li {
+    color: var(--Grey-Text, #B3B3BA);
+  }
+  body.inner-page .header-desktop .header-contact .contact-info .lang ul li.active {
+    color: white;
+  }
+  body.inner-page .header-desktop .header-contact .contact-info .lang ul li:hover {
+    background: #F5F5FA;
+  }
+  body.inner-page .header-desktop .header-contact .contact-info .contact ul li {
+    color: var(--Grey-Text, #B3B3BA);
+  }
+  body.inner-page .header-desktop .header-contact .contact-info .contact a.adress {
+    color: var(--Grey-Text, #B3B3BA);
+  }
+  body.inner-page .header-desktop .header-contact .contact-info .contact a.phone {
+    color: var(--Grey-Text, #B3B3BA);
+  }
+}
+
+body.inner-page .desctop-nav ul a {
+  color: #24A3FF;
+}
+
+body.inner-page .desctop-nav ul li::after {
+  background-color: #f0145a;
+}
+
+body.inner-page .desctop-nav ul li:hover a {
+  color: #F0145A;
+}
+
+body.inner-page .logoPage {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+body.inner-page .logoPage::after {
+  content: attr(data-page-title);
+  color: var(--Main-Regular, #323264);
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+body.contact-page .logoPage {
+  --title: "contact";
+}
+
+.header-banner {
+  min-height: 100vh;
+  background-image: url(../img/Symbol.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.header-banner p {
+  color: #fff;
+  text-align: center;
+  font-size: 38px;
+  font-weight: 700;
+}
+.header-banner svg {
+  position: absolute;
+  bottom: 20px;
+}
+.header-banner svg:hover circle, .header-banner svg:hover path {
+  stroke: #F0145A;
+}
+@media screen and (min-width: 1200px) {
+  .header-banner {
+    background-size: contain;
+  }
+}
+
+.form {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+}
+.form .contact-wrapper {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-.contact-wrapper .adress-block li {
+.form .contact-wrapper .adress-block li {
   color: var(--Main-Regular, #323264);
   font-size: 21px;
   font-style: normal;
   font-weight: 400;
+  line-height: 30px;
+}
+.form .contact-wrapper .line {
+  background: var(--Grey-Separator, #E6E6F0);
+  height: 4px;
+  align-self: stretch;
+}
+.form .contact-wrapper .contact-methods ul li {
+  color: var(--Main-Regular, #323264);
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+.form .contact-wrapper .contact-methods ul li .contact-email {
+  color: var(--Active-Regular, #24A3FF);
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+.form .contact-wrapper .social-page {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.form .contact-wrapper .social-page p {
+  color: var(--Active-Regular, #24A3FF);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.form .contact-wrapper .social-page:hover svg path {
+  fill: #F0145A;
+}
+.form .contact-wrapper .social-page:hover p {
+  color: #F0145A;
+}
+.form .contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+  border-radius: 12px;
+  background: var(--Grey-Bg, #F5F5FA);
+  padding: 30px;
+}
+.form .contact-form h2 {
+  font-size: 30px;
+  font-weight: 700;
+  background: var(--Gradient-Red-Text, linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.form .contact-form #contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.form .contact-form #contactForm input, .form .contact-form #contactForm textarea {
+  border-radius: 8px;
+  border: 1px solid var(--Basic-White, #FFF);
+  background: var(--Basic-White, #FFF);
+  padding: 15px;
+  color: var(--Grey-Text, #B3B3BA);
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+}
+.form .contact-form #contactForm textarea {
+  height: 130px;
+  resize: none;
+  width: 100%;
+}
+.form .contact-form #contactForm label {
+  color: var(--Grey-Text, #B3B3BA);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.form .contact-form #contactForm .form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+}
+.form .contact-form #contactForm input:focus,
+.form .contact-form #contactForm textarea:focus {
+  border: 1px solid var(--Active-Regular, #24A3FF);
+  background: var(--Basic-White, #FFF);
+  color: var(--Basic-Black, #000);
+}
+.form .contact-form #contactForm input:disabled,
+.form .contact-form #contactForm textarea:disabled {
+  border-radius: 8px;
+  border: 1px solid var(--Grey-Bg-Alt, #EDEDF7);
+  background: var(--Grey-Bg-Alt, #EDEDF7);
+  color: var(--Grey-Text, #B3B3BA);
+}
+.form .contact-form #contactForm .invalid {
+  color: #FF0000;
+  border: 1px solid #F00;
+  background: var(--Basic-White, #FFF);
+}
+.form .contact-form button {
+  border-radius: 12px;
+  background: var(--Active-Regular, #24A3FF);
+  box-shadow: 0 0 20px 0 rgba(36, 163, 255, 0.5);
+  padding: 18px 30px;
+  color: var(--Basic-White, #FFF);
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  position: relative;
+}
+.form .contact-form button:hover {
+  background: var(--active-hover, #0085FF);
+  box-shadow: 0 0 20px 0 rgba(36, 163, 255, 0.5);
+}
+.form .contact-form button:active, .form .contact-form button:focus {
+  background: var(--active-active, #006CCF);
+  transform: scale(0.98);
+}
+.form .contact-form button.loading {
+  background: var(--Grey-Bg-Alt, #EDEDF7);
+  color: transparent;
+  position: relative;
+  pointer-events: none;
+}
+.form .contact-form button.loading::after {
+  content: "";
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 3px solid #d2d2db;
+  border-top-color: #24A3FF;
+  animation: spin 0.7s linear infinite;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.form .contact-form button.sent {
+  color: var(--Main-Regular, #323264);
+  background: var(--Grey-Bg-Alt, #EDEDF7);
+  pointer-events: none;
+  position: relative;
+}
+.form .contact-form button.sent::after {
+  content: "Sent";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media screen and (min-width: 648px) {
+  .form {
+    padding: 60px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .form {
+    flex-direction: row;
+    gap: 60px;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .form {
+    padding: 60px 180px;
+  }
 }
 
 .experience {
@@ -892,19 +1131,6 @@ header .header-mobile .mobile-menu.open {
   .publications .publication-postItem:nth-child(3) .post-info {
     padding: 30px;
   }
-}
-
-.contact-wrapper {
-  padding: 200px 30px 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-.contact-wrapper .adress-block li {
-  color: var(--Main-Regular, #323264);
-  font-size: 21px;
-  font-style: normal;
-  font-weight: 400;
 }
 
 .line-bottom {

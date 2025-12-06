@@ -3,26 +3,8 @@
 @import 'mixins';
 @import 'global';
 
-
-.contact-wrapper{
-    padding: 200px 30px 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    .adress-block{
-        li{
-          color: var(--Main-Regular, #323264);
-        font-size: 21px;
-        font-style: normal;
-        font-weight: 400;
- 
-        }
-    }
-}
-
-
-@import "layout/banner";
 @import "layout/header";
+@import "layout/banner";
 @import "layout/contactform";
 
 
@@ -546,19 +528,5 @@ h4 {
     }
   }
 }
-.contact-wrapper{
-    padding: 200px 30px 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    .adress-block{
-        li{
-          color: var(--Main-Regular, #323264);
-        font-size: 21px;
-        font-style: normal;
-        font-weight: 400;
- 
-        }
-    }
-}
+
 @import './layout/footer';
