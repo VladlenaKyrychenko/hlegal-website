@@ -16,6 +16,19 @@ body {
   padding: 0 30px;
 }
 
+.contact-wrapper {
+  padding: 200px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.contact-wrapper .adress-block li {
+  color: var(--Main-Regular, #323264);
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 400;
+}
+
 .header-banner {
   min-height: 100vh;
   background-image: url(../img/Symbol.svg);
@@ -46,6 +59,32 @@ body {
   }
 }
 
+body.inner-page .header-mobile {
+  position: static;
+}
+body.inner-page .header-mobile .top-header {
+  background: var(--Grey-Bg, #F5F5FA);
+}
+body.inner-page .header-mobile .top-header .lang ul li.active a {
+  color: white;
+}
+body.inner-page .header-mobile .top-header .lang ul li a {
+  color: var(--Grey-Text, #B3B3BA);
+}
+body.inner-page .header-mobile .top-header .bottom-header .pageName {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+body.inner-page .header-mobile .top-header .bottom-header .pageName span {
+  display: flex;
+  color: white;
+}
+body.inner-page .header-mobile .top-header .bottom-header .pageName svg {
+  width: 11.617px;
+  height: 26px;
+}
+
 header .header-desktop {
   display: none;
 }
@@ -57,12 +96,18 @@ header .header-mobile {
   position: absolute;
   z-index: 1;
 }
+header .header-mobile .desctop-nav {
+  display: none;
+}
 header .header-mobile .top-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 15px;
   background: rgba(245, 245, 250, 0.2);
+}
+header .header-mobile .top-header .contact {
+  display: none;
 }
 header .header-mobile .top-header .lang ul {
   display: flex;
@@ -94,18 +139,19 @@ header .header-mobile .bottom-header {
   justify-content: space-between;
   align-items: center;
 }
-header .header-mobile .bottom-header .hamburger {
-  width: 30px;
-  height: 24px;
+header .header-mobile .bottom-header .logoPage {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+}
+header .header-mobile .bottom-header .desctop-nav {
+  display: none;
+}
+header .header-mobile .bottom-header .hamburger {
   cursor: pointer;
 }
-header .header-mobile .bottom-header .hamburger span {
-  background: white;
-  height: 2px;
-  width: 100%;
+header .header-mobile .bottom-header .hamburger svg {
+  width: 32px;
+  height: 32px;
 }
 header .header-mobile .bottom-header .desctop-nav {
   display: none;
@@ -175,44 +221,95 @@ header .header-mobile .mobile-menu a.current {
 header .header-mobile .mobile-menu.open {
   bottom: 0;
 }
-@media screen and (min-width: 648px) and (max-width: 1199px) {
-  header {
-    /* Put CONTACT block ABOVE the logo */
-    /* Logo stays in the middle section */
-    /* Navigation goes UNDER the logo */
-    /* SD version only: full width nav */
-  }
+@media screen and (min-width: 648px) and (max-width: 1023px) {
   header .header-mobile {
-    display: none;
-  }
-  header .header-desktop {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 20px 40px;
-    position: absolute;
-    z-index: 1;
+    gap: 30px;
     top: 32px;
-    gap: 24px;
+    padding: 0 60px;
   }
-  header .header-contact {
-    order: 1;
-    width: 100%;
-  }
-  header .header-desktop > a {
-    order: 2;
-  }
-  header .desctop-nav {
-    order: 3;
-    width: 100%;
-  }
-  header .desctop-nav ul {
+  header .header-mobile .top-header {
     display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    padding: 0px;
+  }
+  header .header-mobile .top-header .lang ul li:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  header .header-mobile .top-header .lang ul li:active {
+    background: #F0145A;
+  }
+  header .header-mobile .top-header .contact {
+    display: flex;
+    gap: 6px;
+    color: #FFF;
+    font-weight: 400;
+  }
+  header .header-mobile .top-header .contact ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+  }
+  header .header-mobile .top-header .contact ul li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  header .header-mobile .top-header .contact a.adress {
+    color: #FFF;
+    font-weight: 400;
+    font-size: 16px;
+  }
+  header .header-mobile .top-header .contact a.phone {
+    color: #FFF;
+    font-weight: 700;
+    font-family: "Montserrat", sans-serif;
+  }
+  header .header-mobile .top-header .contact .facebookLogo:hover path {
+    fill: #F0145A;
+  }
+  header .header-mobile .top-header .contact-mob {
+    display: none;
+  }
+  header .header-mobile .bottom-header {
+    display: flex;
+    padding: 0px;
+  }
+  header .header-mobile .bottom-header .hamburger {
+    display: none;
+  }
+  header .header-mobile .desctop-nav {
+    display: block;
+  }
+  header .header-mobile .desctop-nav ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+  }
+  header .header-mobile .desctop-nav ul a {
+    color: #FFF;
+    font-weight: 700;
+  }
+  header .header-mobile .desctop-nav ul li::after {
+    display: block;
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: 0.4s;
+  }
+  header .header-mobile .desctop-nav ul li:hover::after {
+    width: 100%;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   header .header-mobile {
     display: none;
   }
@@ -255,6 +352,9 @@ header .header-mobile .mobile-menu.open {
   }
   header .header-desktop .lang ul li:hover {
     background: rgba(255, 255, 255, 0.2);
+  }
+  header .header-desktop .lang ul li:active {
+    background: #F0145A;
   }
   header .header-desktop .lang ul a {
     font-family: "Montserrat", sans-serif;
@@ -304,6 +404,19 @@ header .header-mobile .mobile-menu.open {
   header .header-desktop .desctop-nav ul li:hover::after {
     width: 100%;
   }
+}
+
+.contact-wrapper {
+  padding: 200px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.contact-wrapper .adress-block li {
+  color: var(--Main-Regular, #323264);
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .experience {
@@ -445,7 +558,7 @@ header .header-mobile .mobile-menu.open {
   /* DESKTOP */
 }
 .services h2 {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 700;
   background: linear-gradient(90deg, #F0145A, #EF8080);
   -webkit-background-clip: text;
@@ -697,7 +810,7 @@ header .header-mobile .mobile-menu.open {
   padding: 30px 30px;
 }
 .publications h2 {
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 700;
   background: var(--Gradient-Red-Text, linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%));
   -webkit-background-clip: text;
@@ -779,6 +892,19 @@ header .header-mobile .mobile-menu.open {
   .publications .publication-postItem:nth-child(3) .post-info {
     padding: 30px;
   }
+}
+
+.contact-wrapper {
+  padding: 200px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.contact-wrapper .adress-block li {
+  color: var(--Main-Regular, #323264);
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .line-bottom {
@@ -891,4 +1017,4 @@ footer .footer-desctop .contactText p {
   footer .contactOptions a:hover {
     color: #F0145A;
   }
-}/*# sourceMappingURL=main.css.map */
+}

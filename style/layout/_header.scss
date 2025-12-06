@@ -1,8 +1,35 @@
-@import 'variables';
-@import 'mixins';
-@import 'global';
+body.inner-page{
+  .header-mobile{
+    position: static;
+    .top-header{
+       background: var(--Grey-Bg, #F5F5FA);
 
-
+       .lang ul li.active a{
+        color: white;
+       }
+       .lang ul li a{ 
+            color: var(--Grey-Text, #B3B3BA);
+            }
+      
+.bottom-header{
+.pageName{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  span{
+    display: flex;
+    color: white;
+  }
+  svg{
+    width: 11.617px;
+    height: 26px;
+  }
+}
+}
+  }
+  
+}
+}
 header{
 .header-desktop{
         display: none;
@@ -15,14 +42,19 @@ header{
     position: absolute;
     z-index: 1;
     
-
+.desctop-nav{
+  display: none;
+}
     .top-header{
        display: flex; 
        justify-content: space-between;
        align-items: center;
        padding: 10px 15px;
        background: rgba(245, 245, 250, 0.20);
-       
+
+       .contact{
+        display: none;
+       }
        .lang ul{
         display: flex;
         li{
@@ -59,19 +91,16 @@ header{
     display: flex;
     align-items: center;
   }
+  .desctop-nav{
+    display: none;
+  }
 .hamburger {
-  width: 30px;
-  height: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   cursor: pointer;
-  span {
-    background: white;
-  height: 2px;
-  width: 100%;
 
-}
+ svg{
+  width: 32px;
+  height: 32px;
+ }
 }
 .desctop-nav{
   display: none;
@@ -146,49 +175,100 @@ a.current {
 }
 }
 @include min-screen(648px) {
-  @include max-screen(1199px) {
-.header-mobile{
-  display: none;
-}
-    .header-desktop {
+  @include max-screen(1023px) {
+  .header-mobile{
+     display: flex;
+     flex-direction: column;
+     gap: 30px;
+     top: 32px;
+     padding: 0 60px;
+     .top-header{
       display: flex;
-      flex-direction: column;     // Stack vertically (SD version)
-      align-items: flex-start;
-      padding: 20px 40px;
-       position: absolute;
-    z-index: 1;
-    top: 32px;
-    
-
-      gap: 24px;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      padding: 0px;
+      .lang ul{
+         li:hover{
+            background: rgba(255, 255, 255, 0.20);
+            }
+            li:active {
+              background: $activecolor;
+            }
+      }
+      .contact{
+        display: flex;
+        gap: 6px;
+        color: #FFF;
+        font-weight: 400;
+            ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 6px;
+      li{
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+        }
+        a.adress{
+          color: #FFF;
+        font-weight: 400;
+        font-size: 16px;
+        }
+           a.phone{
+            color: #FFF;
+            font-weight: 700;
+            font-family: "Montserrat", sans-serif;
+        }
+         .facebookLogo:hover path{
+        fill: $activecolor;
+        }
+      }
+      .contact-mob{
+        display: none;
+      }
     }
-
-    /* Put CONTACT block ABOVE the logo */
-    .header-contact {
-      order: 1;
-      width: 100%;
+      .bottom-header{
+        display: flex;
+        padding: 0px;
+          .hamburger{
+            display: none;
+          }
+  }
+  .desctop-nav{
+          display: block;
+            ul{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+            a{
+        color: #FFF;
+        font-weight: 700;
+        } 
+        li::after{
+            display: block;
+            content: "";
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: 0.4s;
+            
+        }
+        li:hover::after{
+            width: 100%;
+        }
+        
     }
-
-    /* Logo stays in the middle section */
-    .header-desktop > a {
-      order: 2;
-    }
-
-    /* Navigation goes UNDER the logo */
-    .desctop-nav {
-      order: 3;
-      width: 100%;
-    }
-
-    /* SD version only: full width nav */
-    .desctop-nav ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
+        }
   }
 }
-@include min-screen(1200px){
+}
+@include min-screen(1024px){
 .header-mobile{
   display: none;
 }
@@ -232,6 +312,9 @@ a.current {
             }
             li:hover{
             background: rgba(255, 255, 255, 0.20);
+            }
+            li:active {
+              background: $activecolor;
             }
             a{
                 font-family: $mainfont;
