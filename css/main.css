@@ -275,9 +275,6 @@ header .header-mobile .mobile-menu.open {
   header .header-desktop .lang ul li:hover {
     background: rgba(255, 255, 255, 0.2);
   }
-  header .header-desktop .lang ul li:active {
-    background: #F0145A;
-  }
   header .header-desktop .lang ul a {
     font-family: "Montserrat", sans-serif;
     font-size: 12px;
@@ -358,6 +355,10 @@ body.inner-page .header-mobile .top-header .contact-mob a {
   body.inner-page .header-mobile .top-header .lang ul li:hover {
     background: #F5F5FA;
   }
+  body.inner-page .header-mobile .top-header .lang ul li:active a {
+    background: #F0145A;
+    color: white;
+  }
   body.inner-page .header-mobile .top-header .contact ul li {
     color: var(--Grey-Text, #B3B3BA);
   }
@@ -375,12 +376,12 @@ body.inner-page .header-mobile .top-header .contact-mob a {
   body.inner-page .header-desktop .header-contact .contact-info .lang ul li {
     color: var(--Grey-Text, #B3B3BA);
   }
+  body.inner-page .header-desktop .header-contact .contact-info .lang ul li:hover {
+    background: #F5F5FA;
+  }
   body.inner-page .header-desktop .header-contact .contact-info .lang ul li:active {
     background: #F0145A;
     color: white;
-  }
-  body.inner-page .header-desktop .header-contact .contact-info .lang ul li:hover {
-    background: #F5F5FA;
   }
   body.inner-page .header-desktop .header-contact .contact-info .contact ul li {
     color: var(--Grey-Text, #B3B3BA);
@@ -502,7 +503,7 @@ body.contact-page .logoPage {
   font-weight: 400;
   line-height: 30px;
 }
-.form .contact-wrapper .contact-methods ul li .contact-email {
+.form .contact-wrapper .contact-methods ul li.contact-email a {
   color: var(--Active-Regular, #24A3FF);
   font-size: 21px;
   font-style: normal;

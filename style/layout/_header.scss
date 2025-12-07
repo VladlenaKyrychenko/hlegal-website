@@ -273,13 +273,8 @@ a.current {
               color: white;
             }
             }
-            
             li:hover{
             background: rgba(255, 255, 255, 0.20);
-            
-            }
-            li:active {
-              background: $activecolor;
             }
             a{
                 font-family: $mainfont;
@@ -373,6 +368,10 @@ body.inner-page{
          li:hover{
             background: #F5F5FA;
             }
+           li:active a{
+              background: $activecolor;
+             color: white;
+       }
       }
         .contact {
             ul{  
@@ -397,7 +396,7 @@ body.inner-page{
           }
     }     
         }
-        @include min-screen(1024px){
+ @include min-screen(1024px){
       .header-desktop{
     .header-contact{
     .contact-info{
@@ -405,13 +404,14 @@ body.inner-page{
             li{
             color: var(--Grey-Text, #B3B3BA);
             }
-            li:active{
-              background: $activecolor;
-        color: white;
-       }
+            
             li:hover{
             background: #F5F5FA;
-            }      
+            }  
+             li:active{ 
+              background: $activecolor;
+             color: white;
+       }   
     }
           .contact {
             ul{  
