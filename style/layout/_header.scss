@@ -276,6 +276,9 @@ a.current {
             li:hover{
             background: rgba(255, 255, 255, 0.20);
             }
+            li:hover:active{
+              background: $activecolor;
+            }
             a{
                 font-family: $mainfont;
                 font-size: 12px;
