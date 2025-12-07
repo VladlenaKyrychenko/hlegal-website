@@ -162,7 +162,7 @@ header .header-mobile .mobile-menu.open {
     background: rgba(255, 255, 255, 0.2);
     z-index: 10000;
   }
-  header .header-mobile .top-header .lang ul li:active {
+  header .header-mobile .top-header .lang ul li:hover:active {
     background: #F0145A;
   }
   header .header-mobile .top-header .contact {
@@ -265,6 +265,14 @@ header .header-mobile .mobile-menu.open {
     text-align: center;
     border-radius: 8px;
     padding: 5px 7px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  header .header-desktop .lang ul li:active {
+    background: #F0145A;
   }
   header .header-desktop .lang ul li:hover {
     background: rgba(255, 255, 255, 0.2);
@@ -352,7 +360,7 @@ body.inner-page .header-mobile .top-header .contact-mob a {
   body.inner-page .header-mobile .top-header .lang ul li:hover {
     background: #F5F5FA;
   }
-  body.inner-page .header-mobile .top-header .lang ul li:active a {
+  body.inner-page .header-mobile .top-header .lang ul li:hover:active {
     background: #F0145A;
     color: white;
   }
@@ -375,6 +383,10 @@ body.inner-page .header-mobile .top-header .contact-mob a {
   }
   body.inner-page .header-desktop .header-contact .contact-info .lang ul li:hover {
     background: #F5F5FA;
+  }
+  body.inner-page .header-desktop .header-contact .contact-info .lang ul li:active {
+    background: #F0145A;
+    color: white;
   }
   body.inner-page .header-desktop .header-contact .contact-info .contact ul li {
     color: var(--Grey-Text, #B3B3BA);
