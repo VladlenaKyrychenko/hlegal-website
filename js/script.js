@@ -1,17 +1,30 @@
-$('.owl-carousel').owlCarousel( {
-autoplay:true,
-autoplayTimeout: 2500,
-autoplaySpeed: 1000,
-loop: true,
-responsive:{
-    0:{
-        items:1
-    }, 
-    1100:{
-        items:1
+if ($('.achievements-carousel').length) {
+  $('.achievements-carousel').owlCarousel({
+    autoplay: true,
+    autoplayTimeout: 2500,
+    autoplaySpeed: 1000,
+    loop: true,
+    responsive: {
+      0: {
+        items: 1    
+      },
+      650: {
+        items: 4         
+      }
     }
+  });
 }
-});
+if ($('.other-carousel').length) {
+  $('.other-carousel').owlCarousel({
+    autoplay: true,
+    autoplayTimeout: 3000,
+    loop: true,
+    responsive: {
+      0: { items: 1 },
+      1100: { items: 1 }
+    }
+  });
+}
 
 function toggleMenu() {
   document.getElementById("mobileMenu").classList.toggle("open");

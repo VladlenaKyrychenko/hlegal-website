@@ -56,7 +56,7 @@ header .header-mobile .top-header .lang ul a {
   letter-spacing: 1px;
   text-align: center;
 }
-header .header-mobile .top-header .lang ul li.active {
+header .header-mobile .top-header .lang ul li:active {
   background: #F0145A;
 }
 header .header-mobile .top-header .phone {
@@ -147,8 +147,7 @@ header .header-mobile .mobile-menu.open {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    top: 32px;
-    padding: 0 60px;
+    padding: 50px 60px 0 60px;
   }
   header .header-mobile .top-header {
     display: flex;
@@ -242,9 +241,7 @@ header .header-mobile .mobile-menu.open {
     width: 100%;
     position: absolute;
     z-index: 1;
-    top: 32px;
-    padding-left: 60px;
-    padding-right: 60px;
+    padding: 50px 60px 0 60px;
   }
   header .header-desktop nav a.active {
     background: #F0145A;
@@ -269,15 +266,14 @@ header .header-mobile .mobile-menu.open {
     border-radius: 8px;
     padding: 5px 7px;
   }
-  header .header-desktop .lang ul li.active {
+  header .header-desktop .lang ul li:active {
     background: #F0145A;
   }
-  header .header-desktop .lang ul li.active a {
+  header .header-desktop .lang ul li:active a {
     color: white;
   }
   header .header-desktop .lang ul li:hover {
     background: rgba(255, 255, 255, 0.2);
-    z-index: 10000;
   }
   header .header-desktop .lang ul li:active {
     background: #F0145A;
@@ -340,13 +336,13 @@ header .header-mobile .mobile-menu.open {
 body.inner-page header,
 body.inner-page .header-desktop,
 body.inner-page .header-mobile {
-  position: relative;
+  position: static;
 }
 
 body.inner-page .header-mobile .top-header {
   background: var(--Grey-Bg, #F5F5FA);
 }
-body.inner-page .header-mobile .top-header .lang ul li.active a {
+body.inner-page .header-mobile .top-header .lang ul li:active a {
   color: white;
 }
 body.inner-page .header-mobile .top-header .lang ul li a {
@@ -379,7 +375,8 @@ body.inner-page .header-mobile .top-header .contact-mob a {
   body.inner-page .header-desktop .header-contact .contact-info .lang ul li {
     color: var(--Grey-Text, #B3B3BA);
   }
-  body.inner-page .header-desktop .header-contact .contact-info .lang ul li.active {
+  body.inner-page .header-desktop .header-contact .contact-info .lang ul li:active {
+    background: #F0145A;
     color: white;
   }
   body.inner-page .header-desktop .header-contact .contact-info .lang ul li:hover {
@@ -413,6 +410,16 @@ body.inner-page .logoPage {
   align-items: flex-start;
   gap: 4px;
 }
+@media screen and (min-width: 648px) {
+  body.inner-page .logoPage img {
+    width: 130px;
+    height: 60px;
+  }
+  body.inner-page .logoPage svg {
+    width: 21px;
+    height: 47px;
+  }
+}
 
 body.inner-page .logoPage::after {
   content: attr(data-page-title);
@@ -422,6 +429,11 @@ body.inner-page .logoPage::after {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+@media screen and (min-width: 648px) {
+  body.inner-page .logoPage::after {
+    font-size: 36px;
+  }
 }
 
 body.contact-page .logoPage {
@@ -466,6 +478,7 @@ body.contact-page .logoPage {
   gap: 30px;
 }
 .form .contact-wrapper {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -651,10 +664,200 @@ body.contact-page .logoPage {
     flex-direction: row;
     gap: 60px;
   }
+  .form .contact-wrapper {
+    align-self: stretch;
+  }
 }
 @media screen and (min-width: 1300px) {
   .form {
     padding: 60px 180px;
+  }
+}
+
+.about-main {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+@media screen and (min-width: 648px) {
+  .about-main {
+    gap: 60px;
+  }
+}
+.about-main h2 {
+  font-size: 30px;
+  font-weight: 700;
+  background: var(--Gradient-Red-Text, linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.about-main .about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+}
+.about-main .about-content .intro {
+  flex: 1;
+  align-items: stretch;
+}
+.about-main .about-content .intro h2 {
+  margin-bottom: 28px;
+}
+.about-main .about-content .intro p {
+  color: var(--Basic-Black, #000);
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 30px;
+}
+.about-main .about-content .about-exp {
+  display: flex;
+  gap: 30px;
+}
+.about-main .about-content .about-exp .line-item {
+  width: 4px;
+  align-self: stretch;
+  background: var(--Grey-Separator, #E6E6F0);
+}
+.about-main .about-content .about-exp .about-items {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: flex-start;
+}
+.about-main .about-content .about-exp .about-items .about-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.about-main .about-content .about-exp .about-items .about-item p {
+  color: var(--Main-Regular, #323264);
+  font-size: 16px;
+  font-weight: 400;
+}
+.about-main .about-content .about-exp .about-items .about-item .numbers {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+.about-main .about-content .about-exp .about-items .about-item .numbers h3 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  background: var(--Gradient-Red-Text, linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media screen and (min-width: 648px) {
+  .about-main .about-content {
+    padding: 60px 60px 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .about-main .about-content {
+    display: flex;
+    flex-direction: row;
+  }
+}
+.about-main .about-banner {
+  aspect-ratio: 1920/800;
+  background: url("../img/Team.png") lightgray 50%/cover no-repeat;
+  background-position: center;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.about-main .about-banner span {
+  color: var(--Basic-White, #FFF);
+  text-align: center;
+  text-shadow: 0 15px 30px rgba(40, 40, 86, 0.8);
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 13px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+.about-main .about-description {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0 30px 30px;
+}
+.about-main .about-description .text {
+  flex: 1;
+}
+.about-main .about-description .heading {
+  flex: 1;
+}
+@media screen and (min-width: 648px) {
+  .about-main .about-description {
+    padding: 0px 60px 60px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .about-main .about-description {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.achievements {
+  background: var(--Grey-Bg, #F5F5FA);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 30px 60px;
+}
+.achievements span {
+  color: var(--Main-Regular, #323264);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.achievements .card {
+  width: 255px;
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  background: var(--Basic-White, #FFF);
+  margin: 0 auto;
+}
+.achievements .card img {
+  max-width: 70%;
+  max-height: 70%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media screen and (min-width: 648px) {
+  .achievements .card {
+    width: 111px;
+    gap: 40px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .achievements .card {
+    width: 196px;
+    height: 110px;
+  }
+}
+@media screen and (min-width: 1315px) {
+  .achievements .card {
+    width: 300px;
   }
 }
 

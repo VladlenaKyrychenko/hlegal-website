@@ -39,7 +39,7 @@ header{
             letter-spacing: 1px;
              text-align: center;
             }
-             li.active{
+             li:active{
             background: $activecolor;
             
             }  
@@ -142,8 +142,7 @@ a.current {
      display: flex;
      flex-direction: column;
      gap: 30px;
-     top: 32px;
-     padding: 0 60px;
+     padding: 50px 60px 0 60px;
      .top-header{
       display: flex;
       flex-direction: row;
@@ -242,9 +241,7 @@ a.current {
    width: 100%;
     position: absolute;
     z-index: 1;
-    top: 32px;
-    padding-left: 60px;
-    padding-right: 60px;
+    padding: 50px 60px 0 60px;
     
     nav a.active{
         background: $activecolor;
@@ -270,7 +267,7 @@ a.current {
             padding: 5px 7px;
             
             }
-              li.active{
+              li:active{
             background: $activecolor;
             a{
               color: white;
@@ -279,7 +276,7 @@ a.current {
             
             li:hover{
             background: rgba(255, 255, 255, 0.20);
-            z-index: 10000;
+            
             }
             li:active {
               background: $activecolor;
@@ -347,7 +344,7 @@ a.current {
 body.inner-page header,
 body.inner-page .header-desktop,
 body.inner-page .header-mobile {
-  position: relative; 
+  position: static; 
 
 }
 body.inner-page{
@@ -355,7 +352,7 @@ body.inner-page{
     .top-header{
        background: var(--Grey-Bg, #F5F5FA);
 
-       .lang ul li.active a{
+       .lang ul li:active a{
         color: white;
        }
        .lang ul li a{ 
@@ -408,7 +405,8 @@ body.inner-page{
             li{
             color: var(--Grey-Text, #B3B3BA);
             }
-            li.active{
+            li:active{
+              background: $activecolor;
         color: white;
        }
             li:hover{
@@ -452,6 +450,16 @@ body.inner-page .logoPage {
   display: flex;
   align-items: flex-start;
   gap: 4px;
+  @include min-screen(648px){
+  img{
+    width: 130px;
+    height: 60px;
+  }
+  svg{
+    width: 21px;
+    height: 47px;
+  }
+}
 }
 
 body.inner-page .logoPage::after {
@@ -462,6 +470,9 @@ body.inner-page .logoPage::after {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+   @include min-screen(648px){
+          font-size: 36px;
+}
 }
 body.contact-page .logoPage {
   --title: "contact";
