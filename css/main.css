@@ -791,6 +791,23 @@ body.contact-page .logoPage {
   text-transform: uppercase;
   opacity: 0.8;
 }
+@media screen and (min-width: 648px) {
+  .about-main .about-banner span {
+    font-size: 46px;
+    font-weight: 700;
+    letter-spacing: 63px;
+  }
+}
+@media screen and (min-width: 1020px) {
+  .about-main .about-banner span {
+    font-size: 86px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .about-main .about-banner span {
+    font-size: 96px;
+  }
+}
 .about-main .about-description {
   display: flex;
   flex-direction: column;

@@ -104,6 +104,17 @@
         letter-spacing: 13px;
         text-transform: uppercase;
         opacity: 0.8;
+        @include min-screen(648px){
+            font-size: 46px;
+            font-weight: 700;
+            letter-spacing: 63px;
+   }
+    @include min-screen(1020px){
+            font-size: 86px;
+   }
+    @include min-screen(1440px){
+            font-size: 96px;
+   }
     }
  }
  .about-description{
