@@ -346,7 +346,6 @@ body.inner-page header,
 body.inner-page .header-desktop,
 body.inner-page .header-mobile {
   position: static; 
-
 }
 body.inner-page{
   .header-mobile{
@@ -456,6 +455,11 @@ body.inner-page .logoPage {
   display: flex;
   align-items: flex-start;
   gap: 4px;
+img{
+  width: 69px;
+  height: 32px;
+}
+
   @include min-screen(648px){
   img{
     width: 130px;
@@ -483,3 +487,53 @@ body.inner-page .logoPage::after {
 body.contact-page .logoPage {
   --title: "contact";
 }
+body.inner-padeServices .logoPage::after {
+  content: attr(data-page-title);
+  color: var(--Basic-White, #FFF);
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+   @include min-screen(648px){
+          font-size: 36px;
+}
+}
+body.inner-padeServices header,
+body.inner-padeServices .header-desktop,
+body.inner-padeServices .header-mobile {
+  position: static; 
+}
+body.inner-padeServices header{
+  background-color: #323264;
+ 
+}
+body.inner-padeServices .services{
+
+padding-top: 30px;
+   @include min-screen(648px){
+          padding-top: 60px;
+}
+ 
+}
+body.inner-padeServices .logoPage {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+img{
+  width: 69px;
+  height: 32px;
+}
+
+  @include min-screen(648px){
+  img{
+    width: 130px;
+    height: 60px;
+  }
+  svg{
+    width: 21px;
+    height: 47px;
+  }
+}
+}
+ 

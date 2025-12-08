@@ -416,6 +416,10 @@ body.inner-page .logoPage {
   align-items: flex-start;
   gap: 4px;
 }
+body.inner-page .logoPage img {
+  width: 69px;
+  height: 32px;
+}
 @media screen and (min-width: 648px) {
   body.inner-page .logoPage img {
     width: 130px;
@@ -444,6 +448,60 @@ body.inner-page .logoPage::after {
 
 body.contact-page .logoPage {
   --title: "contact";
+}
+
+body.inner-padeServices .logoPage::after {
+  content: attr(data-page-title);
+  color: var(--Basic-White, #FFF);
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+@media screen and (min-width: 648px) {
+  body.inner-padeServices .logoPage::after {
+    font-size: 36px;
+  }
+}
+
+body.inner-padeServices header,
+body.inner-padeServices .header-desktop,
+body.inner-padeServices .header-mobile {
+  position: static;
+}
+
+body.inner-padeServices header {
+  background-color: #323264;
+}
+
+body.inner-padeServices .services {
+  padding-top: 30px;
+}
+@media screen and (min-width: 648px) {
+  body.inner-padeServices .services {
+    padding-top: 60px;
+  }
+}
+
+body.inner-padeServices .logoPage {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+body.inner-padeServices .logoPage img {
+  width: 69px;
+  height: 32px;
+}
+@media screen and (min-width: 648px) {
+  body.inner-padeServices .logoPage img {
+    width: 130px;
+    height: 60px;
+  }
+  body.inner-padeServices .logoPage svg {
+    width: 21px;
+    height: 47px;
+  }
 }
 
 .header-banner {
@@ -891,6 +949,11 @@ body.contact-page .logoPage {
   gap: 30px;
   padding: 30px 30px;
 }
+@media screen and (min-width: 648px) {
+  .experience {
+    padding: 60px 60px;
+  }
+}
 .experience .scroll-wrapper {
   width: 100%;
   overflow-x: auto;
@@ -932,6 +995,11 @@ body.contact-page .logoPage {
 .experience .description h3 {
   font-size: 20px;
   font-weight: 700;
+}
+@media screen and (min-width: 648px) {
+  .experience .description h3 {
+    font-size: 30px;
+  }
 }
 .experience .description p {
   font-size: 19px;
@@ -1022,6 +1090,11 @@ body.contact-page .logoPage {
   /* TABLET */
   /* DESKTOP */
 }
+@media screen and (min-width: 648px) {
+  .services {
+    padding: 0 60px 60px;
+  }
+}
 .services h2 {
   font-size: 30px;
   font-weight: 700;
@@ -1049,14 +1122,23 @@ body.contact-page .logoPage {
   margin-bottom: 20px;
 }
 .services-item .item1 h4, .services-item .item2 h4, .services-item .item3 h4, .services-item .item4 h4, .services-item .item5 h4, .services-item .item6 h4 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   color: #24A3FF;
   margin-bottom: 10px;
 }
+.services-item .item1 h4 a, .services-item .item2 h4 a, .services-item .item3 h4 a, .services-item .item4 h4 a, .services-item .item5 h4 a, .services-item .item6 h4 a {
+  color: #24A3FF;
+}
+.services-item .item1 h4 a:hover, .services-item .item2 h4 a:hover, .services-item .item3 h4 a:hover, .services-item .item4 h4 a:hover, .services-item .item5 h4 a:hover, .services-item .item6 h4 a:hover {
+  color: #F0145A;
+}
 .services-item .item1 p, .services-item .item2 p, .services-item .item3 p, .services-item .item4 p, .services-item .item5 p, .services-item .item6 p {
-  font-size: 14px;
-  line-height: 22px;
+  font-family: "Montserrat", sans-serif;
+  color: var(--Basic-White, #FFF);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
 }
 .services-item .item1::before {
   background-image: url(../img/homepage/Icon1.svg);
