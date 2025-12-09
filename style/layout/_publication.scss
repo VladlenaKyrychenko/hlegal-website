@@ -1,0 +1,65 @@
+body.news-page .publications{
+    align-items: center;
+
+    @include min-screen(648px) {
+       
+  .publication-postItem:nth-child(3) {
+ grid-column: auto;
+  }
+  }
+
+}
+
+.publications{
+
+.segmented-control {
+  display: inline-flex;
+  background: #e8e9f2;
+  padding: 2px;
+  border-radius: 12px;
+  gap: 4px;
+ 
+}
+
+.segmented-control input {
+  display: none;
+}
+
+.segmented-control label {
+  padding: 10px 30px;
+  border-radius: 10px;
+  color: var(--Main-Regular, #323264);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    transition: 0.25s;
+  cursor: pointer;
+}
+
+.segmented-control input:checked + label {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+.button-wrap{
+border-radius: 12px;
+background: var(--Active-Regular, #24A3FF);
+box-shadow: 0 0 20px 0 rgba(36, 163, 255, 0.50);
+padding: 18px 30px;
+.btn-pub{
+    font-family: $mainfont;
+ color: var(--Basic-White, #FFF);
+text-align: center;
+font-size: 16px;
+font-weight: 700;
+}
+
+}.button-wrap:hover{
+    background: var(--active-hover, #0085FF);
+  box-shadow: 0 0 20px 0 rgba(36, 163, 255, 0.50); 
+}
+.button-wrap:active, .button-wrap:focus{
+  background: var(--active-active, #006CCF);
+  transform: scale(0.98);   
+}
+
+}

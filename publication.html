@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <link rel="stylesheet" href="./css/main.css">
+    <title>Publication</title>
+     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/reset.css">
 </head>
-<body class="inner-page contact-page">
+<body class="inner-page news-page">
 <header>
   <div class="header-mobile">
     <div class="top-header">
@@ -49,10 +49,10 @@
 </div>
 </div>
 <div class="bottom-header">
-  <div class="logoPage" data-page-title="contact">
+  <div class="logoPage" data-page-title="publication">
  <a href="./index.html"> <img src="./img/LogoblueSmall.svg" alt="logo">
    </a> 
-   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="26" viewBox="0 0 12 26" fill="none">
+  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="26" viewBox="0 0 12 26" fill="none">
   <path fill-rule="evenodd" clip-rule="evenodd" d="M8.39478 0H11.617L3.22224 26H0L8.39478 0Z" fill="#F0145A"/>
 </svg>
   </div>
@@ -70,7 +70,7 @@
         <li> <a href="./services.html">services</a></li>
         <li><a href="#">team</a></li>
         <li><a href="./publication.html">publications</a></li>
-        <li><a href="./contact.html" class="current">contact</a></li>
+        <li><a href="./contact.html">contact</a></li>
     </ul>  
 </nav>
 <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
@@ -82,17 +82,17 @@
     <li><a href="./about.html" >about us</a></li>
     <li><a href="./services.html">services</a></li>
     <li><a href="#">team</a></li>
-    <li><a href="./publication.html">publication</a></li>
-    <li><a href="./contact.html" class="current">contact</a></li>
+    <li><a href="./publication.html"class="current">publication</a></li>
+    <li><a href="./contact.html">contact</a></li>
   </ul>
 </div>
   </div>
 <div class="header-desktop">
-  <div class="logoPage" data-page-title="contact">
+  <div class="logoPage" data-page-title="publication">
        <a href="./index.html"> <img src="./img/Logoblue.svg" alt="logo">
    </a>
-   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="26" viewBox="0 0 12 26" fill="none">
-  <path fill-rule="evenodd" clip-rule="evenodd" d="M8.39478 0H11.617L3.22224 26H0L8.39478 0Z" fill="#F0145A"/>
+   <svg xmlns="http://www.w3.org/2000/svg" width="21" height="47" viewBox="0 0 21 47" fill="none">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M15.1752 0H21L5.82483 47H0L15.1752 0Z" fill="#F0145A"/>
 </svg>
    </div>
 <div class="header-contact">
@@ -144,61 +144,76 @@
 </nav>
 </div>
 </div>
-</header>
-<section>
-  <div class="form">
-    <div class="contact-wrapper">
-        <div class="adress-block">
-            <ul>
-                <li><a href="#">Kyiv, Mechnikova str, 14</a></li>
-            </ul>
-            
-        </div>
+</header> 
+<main>
+    <div class="publications">
+<div class="segmented-control">
+  <input type="radio" name="segment" id="news" checked>
+  <label for="news">news</label>
+
+  <input type="radio" name="segment" id="articles">
+  <label for="articles">articles</label>
+</div> 
+<div class="publications-post">
+    <div class="publication-postItem">
+        <img src="./img/homepage/Cover.png" alt="working process">
+        <div class="post-info">
+        <h3>Equity associate</h3>
+        <span>April 22</span>
         <div class="line"></div>
-        <div class="contact-methods">
-           <ul>
-            <li>
-                <a href="#">0800 211 927</a>
-            </li>
-             <li class="contact-email">
-                <a href="#">contact@forstudy.space</a>
-            </li>
-           </ul> 
-        </div>
-        <div class="line"></div>
-        <div class="social-page">
-           <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
-  <g clip-path="url(#clip0_22724_6982)">
-    <path d="M38 19.1161C38 8.55857 29.4934 0 19 0C8.50658 0 0 8.55857 0 19.1161C0 28.6575 6.94803 36.5659 16.0312 38V24.6419H11.207V19.1161H16.0312V14.9046C16.0312 10.1136 18.8678 7.46723 23.2078 7.46723C25.2866 7.46723 27.4609 7.84059 27.4609 7.84059V12.545H25.0651C22.7048 12.545 21.9688 14.0185 21.9688 15.5302V19.1161H27.2383L26.3959 24.6419H21.9688V38C31.052 36.5659 38 28.6575 38 19.1161Z" fill="#24A3FF"/>
-  </g>
-  <defs>
-    <clipPath id="clip0_22724_6982">
-      <rect width="38" height="38" fill="white"/>
-    </clipPath>
-  </defs>
-</svg> 
-<p>Our page <br> on facebook</p>
-        </div>
+        <p>I'm a jun on projects. I am a co-owner of a law firm. How it happened. Before entering my parents told me that if I…</p>
     </div>
-    <div class="contact-form">
-      <h2>We would like to help you</h2>
-    <form id="contactForm">
-        <div class="form-wrapper">
-<input id="username" type="text" placeholder="Name">
-<textarea id="message" placeholder="Message" rows="5"></textarea>
-</div>
-<div class="form-wrapper">
-<label>How to answer you?</label>
-<input id="tel" type="tel"  placeholder="Phone number">
-<input id="email" type="email"  placeholder="Email">
-</div>
-<button id="submitBtn" type="submit">Send message</button>
-    
-  </form>
-</div>
   </div>
-</section>
-<footer>
+     <div class="publication-postItem">
+        <img src="./img/homepage/Cover2.png" alt="GDPR">
+       <div class="post-info">
+        <h3>Penalty for the Good Corporation: what will happen to Google and others for violating the GDPR</h3>
+        <span>September 29</span>
+        <div class="line"></div>
+        <p>And why the recovery of 50 million euros could be a fateful precedent According to Mind.ua January 21 National Commission for Data Protection.</p>
+    </div>
+  </div>
+    <div class="publication-postItem">
+        <img src="./img/homepage/Cover3.png" alt="working process">
+        <div class="post-info">
+        <h3>Millennial Testament</h3>
+        <span>August 19</span>
+        <div class="line"></div>
+        <p>What and how modern vloggers, opinion leaders and crypto-millionaires will inherit A typical legacy of the Ukrainian generation X looks like this: an apartment in…</p>
+    </div>
+  </div>
+  <div class="publication-postItem">
+        <img src="./img/homepage/Publication-4.png" alt="working process">
+        <div class="post-info">
+        <h3>Language Law: How to Make Your Website Relevant</h3>
+        <span>August 19</span>
+        <div class="line"></div>
+        <p>Natalia Kyryk, head of content studio Wordfactory.ua First, it's beautiful! This is the number one argument in favor of the Ukrainian-language site. Secondly, it is effective. IN…</p>
+    </div>
+  </div>
+  <div class="publication-postItem">
+        <img src="./img/homepage/Publication-5.png" alt="working process">
+        <div class="post-info">
+        <h3>Reimbursement of the child's tuition fees in kindergarten and school</h3>
+        <span>February 5, 2018</span>
+        <div class="line"></div>
+        <p>What we are talking about In June this year, the Verkhovna Rada amended the Tax Code of Ukraine. From now on, parents who receive an official…</p>
+    </div>
+  </div>
+  <div class="publication-postItem">
+        <div class="post-info">
+        <h3>Currency control is dead, long live currency control!</h3>
+        <span>June 14, 2018</span>
+        <div class="line"></div>
+        <p>Experts hold conferences, round tables and other events on "liberalization of currency legislation." Lawyers-experts-novelists rub their fingers about "ctrl + c / ctrl + v".</p>
+    </div>
+</div>
+</div>
+<div class="button-wrap">
+    <a href="#" class="btn-pub">More publications</a></div>
+</div>
+</main> 
+ <footer>
   <div class="line-bottom"></div>
   </div>
     <div class="footer-desctop">
@@ -240,6 +255,6 @@
         </div>
     </div>
 </footer>
-<script src="./js/script.js"></script>
+<script src="./js/script.js"></script> 
 </body>
 </html>

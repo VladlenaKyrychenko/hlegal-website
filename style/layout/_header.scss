@@ -142,7 +142,7 @@ a.current {
      display: flex;
      flex-direction: column;
      gap: 30px;
-     padding: 50px 60px 0 60px;
+     padding: 50px 60px 30px 60px;
      .top-header{
       display: flex;
       flex-direction: row;
@@ -241,7 +241,7 @@ a.current {
    width: 100%;
     position: absolute;
     z-index: 1;
-    padding: 50px 60px 0 60px;
+    padding: 50px 60px 30px 60px;
     
     nav a.active{
         background: $activecolor;
@@ -511,9 +511,7 @@ body.inner-padeServices header{
 body.inner-padeServices .services{
 
 padding-top: 30px;
-   @include min-screen(648px){
-          padding-top: 60px;
-}
+ 
  
 }
 body.inner-padeServices .logoPage {

@@ -196,7 +196,7 @@ button.sent::after {
 }
 
  @include min-screen(648px) {
-    padding: 60px;
+    padding: 30px 60px 60px ;
   }
   @include min-screen(1024px) {
   flex-direction: row;
