@@ -48,6 +48,9 @@ header .header-mobile .top-header .lang ul li {
   border-radius: 8px;
   padding: 5px 7px;
 }
+header .header-mobile .top-header .lang ul li.current {
+  background: #F0145A;
+}
 header .header-mobile .top-header .lang ul a {
   font-family: "Montserrat", sans-serif;
   color: #FFF;
@@ -218,6 +221,10 @@ header .header-mobile .mobile-menu.open {
     color: #FFF;
     font-weight: 700;
   }
+  header .header-mobile .desctop-nav ul a.current {
+    color: #F0145A;
+    border-bottom: 2px solid #F0145A;
+  }
   header .header-mobile .desctop-nav ul li::after {
     display: block;
     content: "";
@@ -271,6 +278,9 @@ header .header-mobile .mobile-menu.open {
     letter-spacing: 1px;
     text-align: center;
   }
+  header .header-desktop .lang ul li.current {
+    background: #F0145A;
+  }
   header .header-desktop .lang ul li:active {
     background: #F0145A;
   }
@@ -322,6 +332,10 @@ header .header-mobile .mobile-menu.open {
     color: #FFF;
     font-weight: 700;
   }
+  header .header-desktop .desctop-nav ul a.current {
+    color: #F0145A;
+    border-bottom: 2px solid #F0145A;
+  }
   header .header-desktop .desctop-nav ul li::after {
     display: block;
     content: "";
@@ -349,6 +363,9 @@ body.inner-page .header-mobile .top-header .lang ul li:active a {
 }
 body.inner-page .header-mobile .top-header .lang ul li a {
   color: var(--Grey-Text, #B3B3BA);
+}
+body.inner-page .header-mobile .top-header .lang ul li.current a {
+  color: white;
 }
 body.inner-page .header-mobile .top-header .contact-mob a {
   color: var(--Grey-Text, #B3B3BA);
@@ -380,6 +397,9 @@ body.inner-page .header-mobile .top-header .contact-mob a {
 @media screen and (min-width: 1024px) {
   body.inner-page .header-desktop .header-contact .contact-info .lang ul li {
     color: var(--Grey-Text, #B3B3BA);
+  }
+  body.inner-page .header-desktop .header-contact .contact-info .lang ul li.current {
+    color: white;
   }
   body.inner-page .header-desktop .header-contact .contact-info .lang ul li:hover {
     background: #F5F5FA;
@@ -990,6 +1010,108 @@ body.news-page .publications {
 .publications .button-wrap:active, .publications .button-wrap:focus {
   background: var(--active-active, #006CCF);
   transform: scale(0.98);
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+}
+@media screen and (min-width: 780px) {
+  .team {
+    gap: 60px;
+    padding: 60px;
+  }
+}
+.team h2 {
+  font-size: 30px;
+  font-weight: 700;
+  background: var(--Gradient-Red-Text, linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media screen and (min-width: 648px) {
+  .team h2 {
+    font-size: 38px;
+  }
+}
+.team .team-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+@media screen and (min-width: 405px) {
+  .team .team-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1020px) {
+  .team .team-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.team .team-list .team-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 15px;
+}
+.team .team-list .team-card .team-photo {
+  align-self: stretch;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+}
+@media screen and (min-width: 648px) {
+  .team .team-list .team-card .team-photo {
+    height: 400px;
+  }
+}
+.team .team-list .team-card .img1 {
+  background-image: url("../img/Team-1.png");
+}
+.team .team-list .team-card .img2 {
+  background-image: url("../img/Team-2.png");
+}
+.team .team-list .team-card .img3 {
+  background-image: url("../img/Team-3.png");
+}
+.team .team-list .team-card .img4 {
+  background-image: url("../img/Team-4.png");
+}
+.team .team-list .team-card .img5 {
+  background-image: url("../img/Team-5.png");
+}
+.team .team-list .team-card .img6 {
+  background-image: url("../img/Team-6.png");
+}
+.team .team-list .team-card .team-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+.team .team-list .team-card .team-info span {
+  display: inline-block;
+  color: var(--Main-Regular, #323264);
+  font-size: 16px;
+  font-weight: 700;
+}
+.team .team-list .team-card .team-info p {
+  color: var(--Grey-Text, #B3B3BA);
+  font-size: 14px;
+  font-weight: 400;
+}
+.team .team-list .team-card .team-info:hover span {
+  color: #F0145A;
+}
+.team .team-list .team-card .team-info:hover svg path {
+  stroke: #F0145A;
 }
 
 .experience {

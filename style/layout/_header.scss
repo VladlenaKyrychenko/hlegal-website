@@ -31,6 +31,9 @@ header{
             border-radius: 8px;
             padding: 5px 7px;
         }
+        li.current{
+          background: $activecolor;
+        }
             a{
             font-family: $mainfont;
             color: #FFF;
@@ -212,6 +215,11 @@ a.current {
         color: #FFF;
         font-weight: 700;
         } 
+        a.current{
+          color: $activecolor;
+          border-bottom: 2px solid $activecolor;
+        }
+        
         li::after{
             display: block;
             content: "";
@@ -227,6 +235,7 @@ a.current {
         
     }
         }
+        
   }
 }
 }
@@ -272,6 +281,9 @@ a.current {
              text-align: center;
             
             }
+            li.current{
+          background: $activecolor;
+        }
               li:active{
             background: $activecolor;
             
@@ -325,6 +337,10 @@ a.current {
         color: #FFF;
         font-weight: 700;
         } 
+         a.current{
+          color: $activecolor;
+          border-bottom: 2px solid $activecolor;
+        }
         li::after{
             display: block;
             content: "";
@@ -357,6 +373,9 @@ body.inner-page{
        }
        .lang ul li a{ 
             color: var(--Grey-Text, #B3B3BA);
+            }
+            .lang ul li.current a{
+              color: white;
             }
             .contact-mob a{
               color: var(--Grey-Text, #B3B3BA);
@@ -408,6 +427,9 @@ body.inner-page{
         .lang ul{
             li{
             color: var(--Grey-Text, #B3B3BA);
+            }
+             li.current{
+              color: white;
             }
             
             li:hover{
@@ -509,7 +531,6 @@ body.inner-padeServices header{
  
 }
 body.inner-padeServices .services{
-
 padding-top: 30px;
  
  
